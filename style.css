@@ -1,13 +1,17 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    /*color: #333;*/
+    color: #00A080;
     max-width: 800px;
     /* max-width: 80%; */
     margin: 0 auto;
     padding: 2rem;
     /*background-color: #f6f8fa;*/
     background-color: #FF7000;
+}
+input, button, textarea {
+    color: #00A080;
 }
 
 header {
@@ -29,7 +33,7 @@ h1 { margin-bottom: 0.5rem; }
 }
 
 .logo {
-    height: 30px; /* контролируешь масштаб */
+    height: 80px; /* контролируешь масштаб */
 }
 
 .brand h1 {
@@ -97,36 +101,23 @@ details {
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  background: #f9f9f9;
+  /*background: #f9f9f9;*/
+  background: #00A080;
   transition: all 0.3s ease;
+  color: white;
 }
 
 /* Заголовок <summary> */
 details summary {
   cursor: pointer;
-  font-weight: bold;
-  padding: 0.5rem;
-  list-style: none; /* Убираем стандартную стрелку */
   position: relative;
-}
-
-/* Кастомная стрелка */
-details summary::after {
-  content: "▼";
-  position: absolute;
-  right: 1rem;
-  transition: transform 1s ease;
-}
-
-/* Анимация стрелки при открытии */
-details[open] summary::after {
-  transform: rotate(180deg);
 }
 
 /* Анимация раскрытия контента */
 details[open] {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: #00A080;
 }
 
 /* Стиль прогресс-бара */
@@ -152,7 +143,7 @@ progress::-moz-progress-bar {
     margin: 60px auto;
     padding: 20px 30px;
     max-width: 700px;
-    border-left: 4px solid #00A080;;
+    border-left: 3px solid #00A080;;
     font-size: 1.2rem;
     line-height: 1.6;
     color: #00A080;
@@ -227,14 +218,15 @@ progress::-moz-progress-bar {
 
 /* Блок предупреждения о рисках */
 .warning-block {
-    border-left: 5px solid #FF7000; /* Темно-красная полоса сбоку */
+    border-left: 3px solid red; /* Темно-красная полоса сбоку */
     padding: 20px;
     margin: 20px 0;
+    color: red;
 }
 
 /* Эффект акцента на заголовке внутри блока */
 .warning-title {
-    color: #FF7000;
+    color: red;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;

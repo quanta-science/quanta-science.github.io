@@ -64,9 +64,8 @@
     <header>
         <div class="brand">
             <img src="logo.svg" alt="Quanta Science репетитор по физике и математике" class="logo">
-            <h1>Quanta Science</h1>
+            <h1>Quanta Science<br>онлайн репетитор</h1>
         </div>
-        <h2>система индивидуальных тренингов по<br>математике, физике и химии</h2>
         <div class="links">
             <a href="#request_form" title="Записаться на индивидуальные занятия по химии, физике и математике">Форма заявки</a>
             <a href="#faq">FAQ</a>
@@ -75,7 +74,7 @@
     </header>
 
     <section>
-        <h2>Системный подход к изучению точных наук</h2>
+        <h2>Индивидуальные тренинги по математике, физике и химии</h2>
         <p>Эти дисциплины требуют не только понимания логики задач, но и умения самостоятельно их решать. 
             Наша цель — сформировать у ученика устойчивое понимание и самостоятельность и выстроить навык самостоятельного обучения.</p>
         <p>Важно понимать, что ученик может выстроить навык самообразования и без внешнего контроля. 
@@ -271,14 +270,10 @@
         <p>На этом уроке мы определим уровень вашего ребенка и дадим рекомендации по дальнейшему обучению. Для записи отправьте нам <a href="#request_form" title="Записаться на индивидуальные занятия по химии, физике и математике">заявку</a>.</p>
 
         <h2>Форма заявки</h2>
-        <details><summary>Заполните и отправьте эту форму:</summary>
+        <details><summary>Для получения дополнительной информации заполните и отправьте эту форму:</summary>
             <form id="request_form">
-                <label for="name_first">Имя
-                    <input id="name_first" type="text" name="name_first" oninput="check_params()"
-                    minlength="3" maxlength="15" placeholder="Ваше имя" autocomplete="on" required>
-                </label>
                 <fieldset>
-                    <legend>Предметы</legend>
+                    <legend>Выберите необходимые для вас предметы</legend>
                     <label for="math"><input type="checkbox" class="subject" id="math" name="math" onchange="check_params()" value="математика">математика</label><br>
                     <label for="phys"><input type="checkbox" class="subject" id="phys" name="phys" onchange="check_params()" value="физика">физика</label><br>
                     <label for="chem"><input type="checkbox" class="subject" id="chem" name="chem" onchange="check_params()" value="химия">химия</label>
@@ -336,10 +331,9 @@
                     <textarea style="width: 100%; box-sizing: border-box;" id="comments" name="comments" 
                     rows="3" placeholder="Комментарии, пожелания, дополнительные сведения и т.д."></textarea>
                 </label>
-                <p>Все поля, кроме поля "Комментарии", обязательны для заполнения. Отправка формы возможна 
-                только через WhatsApp для исключения ошибок при обратной связи. Поэтому на вашем смартфоне, 
-                планшете или компьютере должен быть установлен мессенджер WhatsApp.<br>
-                После нажатия на нижеследующую кнопку и перехода в WhatsApp не забудьте нажать на кнопку
+                <p>Всё, кроме поля "Комментарии", обязательно для заполнения.<br>Отправка формы возможна 
+                только через WhatsApp.<br>
+                После перехода в WhatsApp не забудьте нажать на кнопку
                 <svg width="21" height="21" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                     <circle style="fill:#00a984;stroke:#000000;stroke-width:0;fill-opacity:1" cx="9" cy="9" r="8.6" />
                     <path style="fill:#ffffff;stroke:#ffffff;stroke-width:0.264583" d="m 6.35,5.66 6.5,3.2 -6.5,3.2 0,-2.55 3.3,-0.65 -3.3,-0.65 z"/>
@@ -432,11 +426,10 @@
 
     <script>
         function check_params() {
-	        const elem_name_first = document.getElementById('name_first').value;
 	        const elem_second_butt = document.getElementById('second_butt');
             const checkedSubjects = document.querySelectorAll('.subject:checked');
 
-	        if (elem_name_first.length < 3 || checkedSubjects.length === 0) {
+	        if (checkedSubjects.length === 0) {
 		        elem_second_butt.disabled = true;
 	        } else {
 		        elem_second_butt.disabled = false;
@@ -450,9 +443,8 @@
             )
             .map(cb => cb.value)
             .join(", ");
-            window.open("https://wa.me/77071011937?text=" + "*" 
-            + document.getElementById('name_first').value + "*" + "%0A" 
-            + subjects + "%0A" + document.querySelector('input[name="school_class"]:checked')?.value + "%0A" 
+            window.open("https://wa.me/77071011937?text=" + subjects + "%0A" 
+            + document.querySelector('input[name="school_class"]:checked')?.value + "%0A" 
             + document.querySelector('input[name="purpose"]:checked')?.value + "%0A" 
             + document.querySelector('input[name="platform"]:checked')?.value + "%0A" 
             + document.getElementById('comments').value + "%0A" + "Нажмите отправить >>>");

@@ -120,23 +120,17 @@ details[open] {
   color: #00A080;
 }
 
-/* Стиль прогресс-бара */
 progress {
-  width: 100%;
-  height: 20px;
-  border-radius: 10px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
-/* Цвет заполнения */
 progress::-webkit-progress-value {
-  background: #00A080;
-  border-radius: 10px;
-  transition: width 0.5s ease;
+    background: #00A080;
 }
 
 progress::-moz-progress-bar {
-  background: #00A080;
-  border-radius: 10px;
+    background: #00A080;
 }
 
 .quote {

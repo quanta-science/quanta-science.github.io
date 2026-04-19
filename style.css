@@ -1,0 +1,326 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    /* max-width: 80%; */
+    margin: 0 auto;
+    padding: 2rem;
+    /*background-color: #f6f8fa;*/
+    background-color: #FF7000;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+}
+
+h1 { margin-bottom: 0.5rem; }
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 30px; /* контролируешь масштаб */
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+a {
+    color: #0969da;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Стиль кнопки скачивания */
+.abtn {
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 20px 0;
+    background-color: #00A080; /* Строгий темно-синий */
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    border: 2px solid #00A080;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.abtn:hover {
+    background-color: transparent;
+    color: #00A080 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.center {
+    text-align: center;
+}
+
+a:hover { text-decoration: underline; }
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* Базовый стиль для <details> */
+details {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* Заголовок <summary> */
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  list-style: none; /* Убираем стандартную стрелку */
+  position: relative;
+}
+
+/* Кастомная стрелка */
+details summary::after {
+  content: "▼";
+  position: absolute;
+  right: 1rem;
+  transition: transform 1s ease;
+}
+
+/* Анимация стрелки при открытии */
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Анимация раскрытия контента */
+details[open] {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль прогресс-бара */
+progress {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+}
+
+/* Цвет заполнения */
+progress::-webkit-progress-value {
+  background: #00A080;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+progress::-moz-progress-bar {
+  background: #00A080;
+  border-radius: 10px;
+}
+
+.quote {
+    margin: 60px auto;
+    padding: 20px 30px;
+    max-width: 700px;
+    border-left: 4px solid #00A080;;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #00A080;
+    position: relative;
+}
+
+.quote p {
+    margin: 0;
+    font-weight: 700;
+}
+
+.process-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Выравнивание по левому краю для удобства чтения */
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 20px;
+}
+
+.process-item {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Расстояние между кругом и текстом */
+}
+
+/* Стили кругов */
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0; /* Чтобы круг не сплющивался */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.red { background-color: #FF7000; }
+.blue { background-color: #4da6ff; }
+.green { background-color: #00A080; }
+
+/* Текст */
+.content {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.title {
+  font-weight: bold;
+  display: block; /* Заголовок с новой строки для акцента, или inline для компактности */
+}
+
+/* Стрелка-коннектор */
+.connector-arrow {
+  width: 2px;
+  height: 40px; /* Длина стрелки между блоками */
+  background-color: #ccc;
+  margin: 10px 0 10px 11px; /* Сдвиг, чтобы быть ровно под центром круга (12px - 1px) */
+  position: relative;
+}
+
+/* Наконечник стрелки */
+.connector-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #ccc;
+}
+
+/* Блок предупреждения о рисках */
+.warning-block {
+    border-left: 5px solid #FF7000; /* Темно-красная полоса сбоку */
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Эффект акцента на заголовке внутри блока */
+.warning-title {
+    color: #FF7000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Общие стили для обеих кнопок */
+.floating-wa, .floating-tg {
+    position: fixed;
+    right: 30px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* WhatsApp снизу */
+.floating-wa {
+    bottom: 30px;
+    background-color: #25d366;
+}
+
+/* Telegram над WhatsApp */
+.floating-tg {
+    bottom: 85px; /* Поднимаем выше на 55px */
+    background-color: #0088cc;
+}
+
+.floating-wa:hover, .floating-tg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.floating-wa {
+    animation: pulse-green 2s infinite;
+}
+
+/* Анимация пульсации для Telegram (синяя) */
+@keyframes pulse-blue {
+    0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 136, 204, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+}
+
+/* Применяем анимацию к кнопке Telegram */
+.floating-tg {
+    animation: pulse-blue 2s infinite;
+    /* Можно добавить небольшую задержку, чтобы они пульсировали не синхронно */
+    animation-delay: 0.5s; 
+}
+
+/* Адаптив для совсем маленьких экранов */
+/* Скрываем текст на очень маленьких экранах, оставляя только иконку */
+@media (max-width: 480px) {
+    .content {
+        font-size: 14px;
+    }
+    .connector-arrow {
+        height: 30px;
+    }
+    .floating-wa, .floating-tg {
+        padding: 12px;
+        right: 20px;
+    }
+    .floating-wa { bottom: 20px; }
+    .floating-tg { bottom: 70px; }
+    
+    .floating-wa, .floating-tg {
+        font-size: 0; /* Скрываем текст, оставляем иконки */
+    }
+    .floating-wa svg, .floating-tg svg {
+        margin-right: 0;
+    }
+}

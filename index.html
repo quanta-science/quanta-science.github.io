@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="language" content="Russian">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quanta Science: обучение математике, физике и химии на 
     территории СНГ от специалиста с ученой степенью. Индивидуальные занятия, сжатые циклы 
@@ -11,62 +10,133 @@
     <title>Quanta Science — индивидуальная система обучения математике, физике и химии</title>
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://quanta-science.github.io">
+    <link rel="alternate" hreflang="ru" href="https://quanta-science.github.io">
+    <link rel="alternate" hreflang="x-default" href="https://quanta-science.github.io">
+
     <meta property="og:title" content="Quanta Science — интеллектуальный спецназ для вашего ребенка">
     <meta property="og:description" content="Индивидуальные тренинги по математике, физике и химии. 
     Мы не просто учим решать задачи, мы перестраиваем мышление. Научный подход вместо школьной рутины.">
     <meta property="og:url" content="https://quanta-science.github.io">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://quanta-science.github.io/preview.png">
-    <link rel="icon" href="logo.svg" type="image/svg+xml" alt="Quanta Science — индивидуальные 
-    тренинги по математике, физике и химии"/>
+    <link rel="icon" href="logo.svg" type="image/svg+xml"/>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">-->
     <link rel="stylesheet" href="pico.classless.min.css">
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": ["ProfessionalService", "EducationalOrganization", "OnlineBusiness"],
-        "name": "Quanta Science",
-        "description": "Индивидуальная система тренингов по математике, физике и химии для учеников 
-        из стран СНГ от специалиста с ученой степенью. Глубокая подготовка к ЕГЭ, ЕНТ, ЦТ, НИШ и 
-        международным программам (IB, A-Level). Ликвидация пробелов и развитие когнитивной 
-        автономности онлайн.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "СНГ, CIS, Онлайн обучение",
-            "addressCountry": "CIS"
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Образовательные услуги",
-            "itemListElement": [
+        "@graph": [
             {
-                "@type": "Offer",
-                "itemOffered": {
-                "@type": "Service",
-                "name": "Индивидуальный тренинг по математике"
-                }
+                "@type": ["ProfessionalService", "EducationalOrganization"],
+                "@id": "https://quanta-science.github.io",
+                "name": "Quanta Science",
+                "description": "Индивидуальная система тренингов по математике, физике и химии для учеников из стран СНГ от специалиста с ученой степенью. Глубокая подготовка к ЕГЭ, ЕНТ, ЦТ, НИШ и международным программам (IB, A-Level). Ликвидация пробелов и развитие когнитивной автономности онлайн.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Aktobe",
+                    "addressCountry": "KZ"
+                },
+                "location": {
+                    "@type": "VirtualLocation",
+                    "url": "https://quanta-science.github.io"
+                },
+                "areaServed": ["KZ", "RU", "BY", "UZ", "KG", "AZ"],
+                "subjectOf": { "@id": "https://quanta-science.github.io/#faq" },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Образовательные услуги",
+                    "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                        "@type": "Service",
+                        "name": "Индивидуальный тренинг по математике"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                        "@type": "Service",
+                        "name": "Индивидуальный тренинг по физике"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                        "@type": "Service",
+                        "name": "Индивидуальный тренинг по химии"
+                        }
+                    }
+                    ]
+                },
+                "telephone": "+77071011937",
+                "priceRange": "$$",
+                "image": "https://quanta-science.github.io/preview.png"
             },
             {
-                "@type": "Offer",
-                "itemOffered": {
-                "@type": "Service",
-                "name": "Индивидуальный тренинг по физике"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                "@type": "Service",
-                "name": "Индивидуальный тренинг по химии"
-                }
+                "@type": "FAQPage",
+                "@id": "https://quanta-science.github.io/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Как проходят занятия?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Занятия проходят в виде индивидуальных тренингов. Их суть состоит в тренировке решения задач по всему объему соответствующего курса. Теоретический материал подогнан под решения задач. Тренинги проводятся онлайн с использованием таких приложений, как Zoom, Telegram или Teams. В зависимости от потребностей ученика и/или ограничений, действующих в государстве проживания ученика, может быть рассмотрена возможность использования других приложений для проведения онлайн тренингов."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как составляются расписания?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Расписания согласовываются исходя из объема тренингов, который обычно составляет 2 часа в неделю. Каждый час составляет 60 минут. В зависимости от потребностей ученика можно рассмотреть индивидуальный объем тренингов."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "С какого класса принимаются ученики?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Принимаем на тренинги учеников школ, начиная с 6 (шестого) класса. На тренинги могут записаться также студенты и инженерные работники, которые хотели бы освежить знания по соответствующим дисциплинам."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Какова стоимость услуг?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Стоимость услуг формируется из расчета стоимости одного часа. Стоимость также может меняться каждый год. Для получения точной информации пишите на <a href='https://wa.me/77071011937'>WhatsApp</a>. Стоимость услуг может корректироваться, однако остается неизменной на весь срок предоплаты, предусмотренной договором."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как провести оплату?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "По условиям договора предусмотрена предоплата за оказание услуг тренинга. Оплата осуществляется внесением средств на расчетный счет ИП Quanta Science через мобильное приложение, терминалы или отделения банка."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как подписывается договор?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Услуги тренинга по математике, физике и химии оказываются на основании договора. Договор подписывается посредством электронно-цифровой подписи на таких платформах, как https://ezsigner.kz, https://documentolog.com и других подобных."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Как узнать о качестве ваших услуг?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Вы можете записаться на диагностический урок и оценить качество работы на практике до принятия решения об обучении."
+                        }
+                    }
+                ]
             }
-            ]
-        },
-        "telephone": "+77071011937",
-        "url": "https://quanta-science.github.io",
-        "priceRange": "$$",
-        "image": "https://quanta-science.github.io/preview.png"
+        ]
     }
     </script>
     <!-- Yandex.Metrika counter -->
@@ -125,7 +195,7 @@
             'https://wa.me/?text=Приучите%20своего%20ребенка%20к%20учебе%20без%20репетитора%20https://quanta-science.github.io/intelligence_guide.pdf', 
             '_blank', 'noopener,noreferrer')">Поделиться протоколом ↗
         </button>
-        <p>Прежде, чем читать дальше, примите следующую мысль как аксиому.</p>
+        <p>Примите следующую мысль как аксиому, прежде чем читать дальше.</p>
         <blockquote><mark>Ученику репетитор нужен только временно: для того, чтобы устранить пробелы в знаниях и 
             развить навык к самообучению. Дальше ученику должно быть достаточно школы, тем более при современном 
             уровне доступа к практически любой образовательной информации. Навык к самообучению должен быть развит 
@@ -159,7 +229,7 @@
                 обеспечение по предметам из открытых источников (<code>Smath Studio</code>, 
                 <code>SciLab</code>, <code>Blender</code>, <code>Avogadro</code>, <code>PyMOL</code>, и 
                 др.), чтобы оно могло быть доступным и для ученика. Поэтому онлайн образование в целом 
-                сегодня не менее эффективно, чем традиционные оффлайн занятия, подтверждением чему являются 
+                сегодня не менее эффективно, чем традиционные офлайн занятия, подтверждением чему являются 
                 современные онлайн курсы, школы и даже университеты. Наши онлайн занятия проходят в 
                 <code>Zoom</code>, <code>Telegram</code> или <code>Teams</code>.</p>
         </details>
@@ -410,7 +480,7 @@
                 у него есть лицо, он существует". Даже если зритель чувствует фальшь, на подсознательном 
                 уровне срабатывает установка: "Раз центр не побоялся выставить человека, значит, им есть 
                 что показать". Для массового потребителя критическое мышление – это энергозатратный 
-                процесс. Здесь срабатывает эффект , когда часто мелькающая картинка успеха дает надежду 
+                процесс. Здесь срабатывает эффект, когда часто мелькающая картинка успеха дает надежду 
                 на то, что "с моим ребенком будет так же". Такие видео эксплуатируют 
                 <a href= "https://en.wikipedia.org/wiki/Availability_heuristic">эвристику доступности</a>: 
                 яркий образ успеха подменяет собой реальную статистическую вероятность, заставляя 
@@ -662,7 +732,7 @@
                 <ul>
                     <li>Занятия проходят в виде индивидуальных тренингов. Их суть состоит в тренировке 
                         решения задач по всему объему соответствующего курса. Теоретический материал 
-                        "заточен" под решения задач.</li>
+                        подогнан под решения задач.</li>
                     <li>Тренинги проводятся онлайн с использованием таких приложений, как Zoom, Telegram 
                         или Teams.</li>
                     <li>В зависимости от потребностей ученика и/или ограничений, действующих в государстве 
@@ -707,7 +777,8 @@
                 </ul>
             <h3>Как узнать о качестве ваших услуг?</h3>
                 <ul>
-                    <li>Вы можете принять участие в диагностическом уроке.</li>
+                    <li>Вы можете записаться на диагностический урок и оценить качество работы на 
+                    практике до принятия решения об обучении.</li>
                 </ul>
         </details>
         <blockquote>

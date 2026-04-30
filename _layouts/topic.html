@@ -18,10 +18,18 @@
     <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"-->
     <link rel="stylesheet" href="pico.classless.min.css">
     <link rel="stylesheet" href="style.css">
-
-
-  <!-- MathJax (для формул) -->
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax (для формул) -->
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          chtml: {
+            scale: 1
+          }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quanta-science.github.io">
+    <link rel="alternate" hreflang="ru" href="https://quanta-science.github.io">
+    <link rel="alternate" hreflang="x-default" href="https://quanta-science.github.io">
+
+
+  <!-- Pico.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+  <!-- MathJax (для формул) -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<header class="container">
+  <nav>
+    <ul>
+      <li><strong>{{ page.section | capitalize }}</strong></li>
+    </ul>
+    <ul>
+      <li><a href="/">Главная</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="grid">
+
+    <!-- SIDEBAR -->
+    <aside>
+      <nav>
+        <ul>
+          {% assign current_dir = page.path | split: "/" | slice: 0, 2 | join: "/" %}
+
+          {% for p in site.pages %}
+            {% if p.path contains current_dir %}
+              <li>
+                <a href="{{ p.url }}"
+                   {% if p.url == page.url %}aria-current="page"{% endif %}>
+                  {{ p.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <section>
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb">
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/{{ page.section }}/">{{ page.section }}</a></li>
+          <li>{{ page.title }}</li>
+        </ul>
+      </nav>
+
+      <h1>{{ page.title }}</h1>
+
+      <!-- THEORY -->
+      {% if page.description %}
+        <p><em>{{ page.description }}</em></p>
+      {% endif %}
+
+      <article>
+        {{ content }}
+      </article>
+
+      <!-- EXAMPLES BLOCK -->
+      {% if page.examples %}
+        <section>
+          <h2>Примеры решений</h2>
+
+          {% for ex in page.examples %}
+            <article>
+              <header>
+                <strong>Задача {{ forloop.index }}</strong>
+              </header>
+
+              <p>{{ ex.problem }}</p>
+
+              <details>
+                <summary>Показать решение</summary>
+                <div>
+                  {{ ex.solution }}
+                </div>
+              </details>
+            </article>
+          {% endfor %}
+        </section>
+      {% endif %}
+
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="container">
+  <small>© {{ site.time | date: "%Y" }}</small>
+</footer>
+
+</body>
+</html>

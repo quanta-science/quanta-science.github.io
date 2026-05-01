@@ -2,6 +2,6 @@ url: "https://quanta-science.github.io"
 baseurl: ""
 permalink: pretty
 collections:
-	docs:
-		output: true
-		permalink: /:path/
+  docs:
+    output: true
+    permalink: /:path/

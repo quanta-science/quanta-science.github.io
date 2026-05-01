@@ -15,17 +15,6 @@
 <!--пути к assets должны быть исправлены !!!-->
 <link rel="stylesheet" href="{{ '/assets/css/pico.classless.min.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    
-<!-- MathJax (для формул) -->
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                processEscapes: true
-            },
-            chtml: {
-                scale: 1
-            }
-        };
-    </script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% if page.math %}
+    {% include mathjax.html %}
+{% endif %}

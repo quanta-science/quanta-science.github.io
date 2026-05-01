@@ -56,7 +56,9 @@
 
 </div>
 </main>
-{% include aside.html %}
+{% if page.aside %}
+    {% include aside.html %}
+{% endif %}
 {% include footer.html %}
 </body>
 </html>

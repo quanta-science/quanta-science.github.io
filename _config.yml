@@ -1,1 +1,3 @@
-baseurl: "https://quanta-science.github.io"
+url: "https://quanta-science.github.io"
+baseurl: ""
+permalink: pretty

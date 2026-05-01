@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{ page.image | default: site.default_image }}">
     <meta property="og:type" content="website">
     <link rel="icon" href="logo.svg" type="image/svg+xml"/>
-    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"-->
+    <!--пути к assets должны быть исправлены !!!-->
     <link rel="stylesheet" href="pico.classless.min.css">
     <link rel="stylesheet" href="style.css">
     <!-- MathJax (для формул) -->
@@ -34,99 +34,58 @@
 </head>
 
 <body>
+{% include header.html %}
+<main>
+<div class="grid">
+<!-- CONTENT -->
+<section>
+<!-- Breadcrumbs -->
+<nav aria-label="breadcrumb">
+<ul>
+<li><a href="/">Главная</a></li>
+<li><a href="/{{ page.section }}/">{{ page.section }}</a></li>
+<li>{{ page.title }}</li>
+</ul>
+</nav>
 
-<!-- TOP NAV -->
-<header class="container">
-  <nav>
-    <ul>
-      <li><strong>{{ page.section | capitalize }}</strong></li>
-    </ul>
-    <ul>
-      <li><a href="/">Главная</a></li>
-    </ul>
-  </nav>
+<h1>{{ page.title }}</h1>
+
+<!-- THEORY -->
+{% if page.description %}
+<p><em>{{ page.description }}</em></p>
+{% endif %}
+
+<article>
+{{ content }}
+</article>
+
+<!-- EXAMPLES BLOCK -->
+{% if page.examples %}
+<section>
+<h2>Примеры решений</h2>
+{% for ex in page.examples %}
+<article>
+<header>
+<strong>Задача {{ forloop.index }}</strong>
 </header>
 
-<main class="container">
+<p>{{ ex.problem }}</p>
 
-  <div class="grid">
+<details>
+<summary>Показать решение</summary>
+<div>
+{{ ex.solution }}
+</div>
+</details>
+</article>
+{% endfor %}
+</section>
+{% endif %}
+</section>
 
-    <!-- SIDEBAR -->
-    <aside>
-      <nav>
-        <ul>
-          {% assign current_dir = page.path | split: "/" | slice: 0, 2 | join: "/" %}
-
-          {% for p in site.pages %}
-            {% if p.path contains current_dir %}
-              <li>
-                <a href="{{ p.url }}"
-                   {% if p.url == page.url %}aria-current="page"{% endif %}>
-                  {{ p.title }}
-                </a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- CONTENT -->
-    <section>
-
-      <!-- Breadcrumbs -->
-      <nav aria-label="breadcrumb">
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/{{ page.section }}/">{{ page.section }}</a></li>
-          <li>{{ page.title }}</li>
-        </ul>
-      </nav>
-
-      <h1>{{ page.title }}</h1>
-
-      <!-- THEORY -->
-      {% if page.description %}
-        <p><em>{{ page.description }}</em></p>
-      {% endif %}
-
-      <article>
-        {{ content }}
-      </article>
-
-      <!-- EXAMPLES BLOCK -->
-      {% if page.examples %}
-        <section>
-          <h2>Примеры решений</h2>
-
-          {% for ex in page.examples %}
-            <article>
-              <header>
-                <strong>Задача {{ forloop.index }}</strong>
-              </header>
-
-              <p>{{ ex.problem }}</p>
-
-              <details>
-                <summary>Показать решение</summary>
-                <div>
-                  {{ ex.solution }}
-                </div>
-              </details>
-            </article>
-          {% endfor %}
-        </section>
-      {% endif %}
-
-    </section>
-
-  </div>
-
+</div>
 </main>
-
-<footer class="container">
-  <small>© {{ site.time | date: "%Y" }}</small>
-</footer>
-
+{% include aside.html %}
+{% include footer.html %}
 </body>
 </html>

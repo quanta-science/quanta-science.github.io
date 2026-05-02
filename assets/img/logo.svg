@@ -7,6 +7,15 @@
         stroke-linecap: round;
         stroke-width: 1;
     }
+    @media (prefers-color-scheme: dark) {
+        path {
+            fill: none;
+            stroke: white;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            stroke-width: 1;
+        }
+    }
 </style>
     <path id="petal"
     d="M -4.000 3.200 L -3.837 2.578 L -3.673 2.018 L -3.510 1.517 L -3.347 1.072 

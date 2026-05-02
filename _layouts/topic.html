@@ -7,28 +7,18 @@
 <body>
 {% include header.html %}
 <main>
-<div class="grid">
-<!-- CONTENT -->
 <section>
-<!-- Breadcrumbs -->
-<nav aria-label="breadcrumb">
-<ul>
-<li><a href="/">Главная</a></li>
-<li><a href="/{{ page.section }}/">{{ page.section }}</a></li>
-<li>{{ page.title }}</li>
-</ul>
-</nav>
+    {% include breadcrumbs.html %}
+    <h1>{{ page.title }}</h1>
 
-<h1>{{ page.title }}</h1>
+    {% if page.description %}
+        <h2>Описание</h2>
+        <p>{{ page.description }}</p>
+    {% endif %}
 
-<!-- THEORY -->
-{% if page.description %}
-<p><em>{{ page.description }}</em></p>
-{% endif %}
-
-<article>
-{{ content }}
-</article>
+    <article>
+    {{ content }}
+    </article>
 
 <!-- EXAMPLES BLOCK -->
 {% if page.examples %}
@@ -54,11 +44,8 @@
 {% endif %}
 </section>
 
-</div>
+{% include prev_next.html %}
 </main>
-{% if page.aside %}
-    {% include aside.html %}
-{% endif %}
 {% include footer.html %}
 </body>
 </html>

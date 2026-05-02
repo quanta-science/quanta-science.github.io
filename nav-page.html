@@ -6,31 +6,31 @@ title: Содержание справочников и статей
 <h1>{{ page.title }}</h1>
 
 {% comment %} 
-  Группируем все документы из коллекции docs по второй части пути (названию папки)
+    Группируем все документы из коллекции docs по второй части пути (названию папки)
 {% endcomment %}
 {% assign grouped = site.docs | group_by_exp: "item", "item.path | split: '/' | slice: 1 | first" %}
 
 <div class="navigation-menu">
-  {% for group in grouped %}
-    {% comment %} 
-      Извлекаем название рубрики из нашего словаря в _data/rubrics.yml
-    {% endcomment %}
-    {% assign rubric_label = site.data.rubrics[group.name] | default: group.name %}
-    
-    <details>
-      <summary style="cursor: pointer; font-weight: bold; margin: 10px 0;">
-        {{ rubric_label }}
-      </summary>
-      <ul style="list-style-type: none;">
-        {% comment %} Сортируем страницы внутри рубрики по значению order {% endcomment %}
-        {% assign sorted_items = group.items | sort: "order" %}
+    {% for group in grouped %}
+        {% comment %} 
+            Извлекаем название рубрики из нашего словаря в _data/rubrics.yml
+        {% endcomment %}
+        {% assign rubric_label = site.data.rubrics[group.name] | default: group.name %}
         
-        {% for item in sorted_items %}
-          <li>
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </details>
-  {% endfor %}
+        <details>
+            <summary style="cursor: pointer; font-weight: bold; margin: 10px 0;">
+                {{ rubric_label }}
+            </summary>
+            <ul style="list-style-type: none;">
+                {% comment %} Сортируем страницы внутри рубрики по значению order {% endcomment %}
+                {% assign sorted_items = group.items | sort: "order" %}
+            
+                {% for item in sorted_items %}
+                    <li>
+                        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </details>
+    {% endfor %}
 </div>

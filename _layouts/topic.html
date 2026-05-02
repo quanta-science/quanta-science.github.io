@@ -5,47 +5,22 @@
 </head>
 
 <body>
-{% include header.html %}
-<main>
-<section>
-    {% include breadcrumbs.html %}
-    <h1>{{ page.title }}</h1>
+    {% include header.html %}
+    <main>
+        {% include breadcrumbs.html %}
+        <h1>{{ page.title }}</h1>
 
-    {% if page.description %}
-        <h2>Описание</h2>
-        <p>{{ page.description }}</p>
-    {% endif %}
+        {% if page.description %}
+            <h2>Описание</h2>
+            <p>{{ page.description }}</p>
+        {% endif %}
 
-    <article>
-    {{ content }}
-    </article>
+        <article>
+            {{ content }}
+        </article>
 
-<!-- EXAMPLES BLOCK -->
-{% if page.examples %}
-<section>
-<h2>Примеры решений</h2>
-{% for ex in page.examples %}
-<article>
-<header>
-<strong>Задача {{ forloop.index }}</strong>
-</header>
-
-<p>{{ ex.problem }}</p>
-
-<details>
-<summary>Показать решение</summary>
-<div>
-{{ ex.solution }}
-</div>
-</details>
-</article>
-{% endfor %}
-</section>
-{% endif %}
-</section>
-
-{% include prev_next.html %}
-</main>
-{% include footer.html %}
+        {% include prev_next.html %}
+    </main>
+    {% include footer.html %}
 </body>
 </html>

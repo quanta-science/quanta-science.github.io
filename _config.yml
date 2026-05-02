@@ -1,9 +1,11 @@
 url: "https://quanta-science.github.io"
 baseurl: ""
 permalink: pretty
+
 collections:
   docs:
     output: true
     permalink: /:path/
-remote_theme: jekyll/jekyll-sitemap
-plugins: - jekyll-sitemap
+
+plugins:
+  - jekyll-sitemap

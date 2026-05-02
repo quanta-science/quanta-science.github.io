@@ -10,7 +10,7 @@
     @media (prefers-color-scheme: dark) {
         path {
             fill: none;
-            stroke: #FFA500;
+            stroke: #FF8000;
             stroke-linejoin: round;
             stroke-linecap: round;
             stroke-width: 1;

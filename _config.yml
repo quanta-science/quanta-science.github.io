@@ -3,7 +3,16 @@ baseurl: ""
 permalink: pretty
 
 collections:
-  docs:
+  math:
+    output: true
+    permalink: /:path/
+  phys:
+    output: true
+    permalink: /:path/
+  chem:
+    output: true
+    permalink: /:path/
+  misc:
     output: true
     permalink: /:path/
 

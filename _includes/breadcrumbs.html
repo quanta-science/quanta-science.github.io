@@ -1,0 +1,33 @@
+{% if page.breadcrumbs %}
+    {% comment %} 
+        1. Разбиваем путь: docs/math/file.html -> ["docs", "math", "file.html"]
+        2. Берем второй элемент (индекс 1) — это ключ рубрики (math, phys и т.д.)
+    {% endcomment %}
+    {% assign path_parts = page.path | split: "/" %}
+    {% assign rubric_key = path_parts[1] %}
+  
+    {% comment %} Получаем человекочитаемое название из словаря {% endcomment %}
+    {% assign rubric_name = site.data.rubrics[rubric_key] | default: rubric_key %}
+
+    <nav aria-label="breadcrumb" style="margin-bottom: 20px;">
+        <ol style="display: flex; list-style: none; padding: 0; font-size: 0.9em; color: #666;">
+            <li style="margin-right: 10px;">
+                <a href="{{ '/' | relative_url }}">Главная</a>
+            </li>
+      
+            <li style="margin-right: 10px;">
+                <span style="margin-right: 10px;">/</span>
+                {% comment %} 
+                    Предполагаем, что страница со списком всех рубрик (содержанием) 
+                    называется nav-page.html (или подставьте свой URL)
+                {% endcomment %}
+                <a href="{{ '/nav-page/' | relative_url }}">{{ rubric_name }}</a>
+            </li>
+
+            <li>
+                <span style="margin-right: 10px;">/</span>
+                <span style="color: #333;">{{ page.title }}</span>
+            </li>
+        </ol>
+  </nav>
+{% endif %}

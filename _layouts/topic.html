@@ -3,7 +3,10 @@
 {% include head.html %}
 
 <body>
-    {% include header.html %}
+    <header>
+        {% include header.html %}
+        {% include for_header_topic.html %}
+    </header>
     <main>
         {% include breadcrumbs.html %}
         <h1>{{ page.title }}</h1>

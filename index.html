@@ -785,8 +785,31 @@
         </blockquote>
     </section>
     </main>
-    <aside>
-        <p>this is aside block</p>
+
+    <!-- Тот же чекбокс-переключатель -->
+    <input type="checkbox" id="sidebar-toggle" hidden>
+    <!-- Кнопка гамбургера в навигации -->
+    <nav class="container-fluid">
+        <ul>
+            <li>
+            <label for="sidebar-toggle" class="hamburger-menu" aria-label="Открыть меню">&#9776;</label>
+            </li>
+            <li><strong>Project Name</strong></li>
+        </ul>
+    </nav>
+    <aside id="sidebar">
+        <nav>
+            <header>
+            <!-- Кнопка закрытия для мобилок (опционально) -->
+            <label for="sidebar-toggle" class="close-menu">✕</label>
+            <strong class="sidebar-title">Меню</strong>
+            </header>
+            <ul>
+            <li><a href="#">Расчеты</a></li>
+            <li><a href="#">Схемы</a></li>
+            <li><a href="#">Архив</a></li>
+            </ul>
+        </nav>
     </aside>
     <footer>
         <address id="contacts">

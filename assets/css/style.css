@@ -83,39 +83,3 @@ margin-right: 0;
     stroke:#ffffff;
     stroke-width:0.264583;
 }
-
-/* Основные стили сайдбара */
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: -280px; /* Спрятан за левым краем */
-  width: 280px;
-  height: 100vh;
-  z-index: 1000;
-  background: var(--card-background-color);
-  box-shadow: var(--card-box-shadow);
-  padding: var(--spacing);
-  transition: left 0.3s ease;
-  overflow-y: auto;
-  border-right: var(--border-width) solid var(--accordion-border-color);
-}
-
-/* Состояние при включенном чекбоксе */
-#sidebar-toggle:checked ~ #sidebar {
-  left: 0;
-}
-
-/* Кнопка закрытия внутри сайдбара */
-.close-menu {
-  display: block;
-  text-align: right;
-  cursor: pointer;
-  margin-bottom: var(--spacing);
-  font-weight: bold;
-}
-
-/* На десктопах можно сделать его статичным, если нужно */
-@media (min-width: 1200px) {
-  /* Если на больших экранах вы все же хотите, чтобы он занимал место, 
-     придется добавить padding-left для body или main */
-}

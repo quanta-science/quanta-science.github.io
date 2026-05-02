@@ -5,3 +5,5 @@ collections:
   docs:
     output: true
     permalink: /:path/
+remote_theme: jekyll/jekyll-sitemap
+plugins: - jekyll-sitemap

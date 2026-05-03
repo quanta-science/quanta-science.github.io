@@ -1,14 +1,15 @@
 {% assign collection_name = page.collection %}
 
 {% if collection_name %}
-    {% assign sorted_docs = site.[collection_name] | sort: "order" %}
+    {% assign sorted_docs = site[collection_name] | where_exp: "item", "item.order != nil" | sort: "order" %}
+
     {% for doc in sorted_docs %}
         {% if doc.url == page.url %}
             {% assign current_index = forloop.index0 %}
             {% assign prev_index = current_index | minus: 1 %}
             {% assign next_index = current_index | plus: 1 %}
 
-            {% if prev_index >= 0 %}
+            {% if prev_index >= 0 and prev_index < sorted_docs.size %}
                 {% assign prev_page = sorted_docs[prev_index] %}
             {% endif %}
 

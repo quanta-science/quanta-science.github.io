@@ -1,6 +1,7 @@
 url: "https://quanta-science.github.io"
 baseurl: ""
 permalink: pretty
+default_image: "/assets/img/preview.png"
 
 collections:
   math:

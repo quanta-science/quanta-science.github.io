@@ -1,8 +1,8 @@
 <main>
     {% case page.view %}
         {% when "topic", "nav" %}
-            <h1>{{ page.title }}</h1>
             <article>
+                <h1>{{ page.title }}</h1>
                 <header>
                     {% if page.description %}
                         <p>{{ page.description }}</p>

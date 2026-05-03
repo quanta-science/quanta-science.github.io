@@ -1,22 +1,3 @@
-{% assign docs = site[page.collection] | sort: "order" %}
-
-{% for doc in docs %}
-    {% if doc.path == page.path %}
-        {% assign i = forloop.index0 %}
-        
-        {% if i > 0 %}
-            {% assign prev = docs[i | minus: 1] %}
-        {% endif %}
-        
-        {% if i < docs.size | minus: 1 %}
-            {% assign next = docs[i | plus: 1] %}
-        {% endif %}
-        
-        {% break %}
-    {% endif %}
-{% endfor %}
-
-
     <nav>
         <ul>
             <li>ghbdtn
@@ -31,3 +12,4 @@
             </li>
         </ul>
     </nav>
+{{ page.collection }}

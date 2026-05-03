@@ -1,35 +1,32 @@
-{% assign collection_name = page.collection %}
+{% assign docs = site[page.collection] | sort: "order" %}
 
-{% if collection_name %}
-    {% assign sorted_docs = site[collection_name] | where_exp: "item", "item.order != nil" | sort: "order" %}
-
-    {% for doc in sorted_docs %}
-        {% if doc.url == page.url %}
-            {% assign current_index = forloop.index0 %}
-            {% assign prev_index = current_index | minus: 1 %}
-            {% assign next_index = current_index | plus: 1 %}
-
-            {% if prev_index >= 0 and prev_index < sorted_docs.size %}
-                {% assign prev_page = sorted_docs[prev_index] %}
-            {% endif %}
-
-            {% if next_index < sorted_docs.size %}
-                {% assign next_page = sorted_docs[next_index] %}
-            {% endif %}
-            {% break %}
+{% for doc in docs %}
+    {% if doc.path == page.path %}
+        {% assign i = forloop.index0 %}
+        
+        {% if i > 0 %}
+            {% assign prev = docs[i | minus: 1] %}
         {% endif %}
-    {% endfor %}
-{% endif %}
+        
+        {% if i < docs.size | minus: 1 %}
+            {% assign next = docs[i | plus: 1] %}
+        {% endif %}
+        
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+
     <nav>
         <ul>
             <li>ghbdtn
-                {% if prev_page %}
-                    <a href="{{ prev_page.url | relative_url }}">&larr; Назад: {{ prev_page.title }}</a>
+                {% if prev %}
+                    <a href="{{ prev.url | relative_url }}">&larr; Назад: {{ prev.title }}</a>
                 {% endif %}
             </li>
             <li>qwas
-                {% if next_page %}
-                    <a href="{{ next_page.url | relative_url }}">Вперед: {{ next_page.title }} &rarr;</a>
+                {% if next %}
+                    <a href="{{ next.url | relative_url }}">Вперед: {{ next.title }} &rarr;</a>
                 {% endif %}
             </li>
         </ul>

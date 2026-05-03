@@ -6,16 +6,16 @@ default_image: "/assets/img/preview.png"
 collections:
   math:
     output: true
-    permalink: /:path/
+    permalink: /math/:path/
   phys:
     output: true
-    permalink: /:path/
+    permalink: /phys/:path/
   chem:
     output: true
-    permalink: /:path/
+    permalink: /chem/:path/
   misc:
     output: true
-    permalink: /:path/
+    permalink: /misc/:path/
 
 plugins:
   - jekyll-sitemap

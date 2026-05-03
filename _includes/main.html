@@ -12,7 +12,7 @@
             </article>
             {% include prevnext.html %}
             {% include cta.html %}
-            <p>we{{ page.collection }}</p>
+            <p>we{{ page.collection }} + {{ site[page.collection].size }}</p>
         {% when "nav" %}
             <article>
                 <h1>{{ page.title }}</h1>

@@ -7,8 +7,8 @@
     <link rel="canonical" href="{{ page.canonical | default: page.url | absolute_url }}">
     <link rel="alternate" hreflang="{{ page.lang | default: 'ru' }}" href="{{ page.url | absolute_url }}">
     <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+    <meta property="og:description" content="{{ page.og_description | default: page.description }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="{{ page.image | default: site.default_image }}">
     <meta property="og:image" content="https://quanta-science.github.io/preview.png">

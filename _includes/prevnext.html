@@ -24,12 +24,12 @@
   {% endfor %}
     <nav>
         <ul>
-            <li>ghbdtn
+            <li>
                 {% if prev %}
                     <a href="{{ prev.url | relative_url }}">&larr; Назад: {{ prev.title }}</a>
                 {% endif %}
             </li>
-            <li>qwas
+            <li>
                 {% if next %}
                     <a href="{{ next.url | relative_url }}">Вперед: {{ next.title }} &rarr;</a>
                 {% endif %}

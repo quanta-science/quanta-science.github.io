@@ -22,12 +22,16 @@
         <ul>
             <li>
                 {% if prev %}
-                    <a href="{{ prev.url | relative_url }}" role="button">⮜ {{ prev.title }}</a>
+                    <a href="{{ prev.url | relative_url }}" role="button">
+                        <small>⮜ {{ prev.title }}</small>
+                    </a>
                 {% endif %}
             </li>
             <li>
                 {% if next %}
-                    <a href="{{ next.url | relative_url }}" role="button">{{ next.title }} ⮞</a>
+                    <a href="{{ next.url | relative_url }}" role="button">
+                        <small>{{ next.title }} ⮞</small>
+                    </a>
                 {% endif %}
             </li>
         </ul>

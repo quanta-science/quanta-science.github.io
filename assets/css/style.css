@@ -83,3 +83,7 @@ margin-right: 0;
     stroke:#ffffff;
     stroke-width:0.264583;
 }
+
+.formulae {
+    overflow: auto;
+}

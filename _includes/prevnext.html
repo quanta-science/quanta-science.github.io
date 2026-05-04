@@ -1,37 +1,35 @@
 {% assign collection_name = page.collection %}
-
 {% if collection_name %}
+    {% assign sorted_docs = site[collection_name] | where_exp: "item", "item.order != nil" | sort: "order" %}
+    {% for doc in sorted_docs %}
+        {% if doc.url == page.url %}
+            {% assign current_index = forloop.index0 %}
+            {% assign prev_index = current_index | minus: 1 %}
+            {% assign next_index = current_index | plus: 1 %}
 
-  {% assign sorted_docs = site[collection_name] | where_exp: "item", "item.order != nil" | sort: "order" %}
+            {% if prev_index >= 0 and prev_index < sorted_docs.size %}
+                {% assign prev = sorted_docs[prev_index] %}
+            {% endif %}
 
-  {% for doc in sorted_docs %}
-    {% if doc.url == page.url %}
-
-      {% assign current_index = forloop.index0 %}
-      {% assign prev_index = current_index | minus: 1 %}
-      {% assign next_index = current_index | plus: 1 %}
-
-      {% if prev_index >= 0 and prev_index < sorted_docs.size %}
-        {% assign prev = sorted_docs[prev_index] %}
-      {% endif %}
-
-      {% if next_index < sorted_docs.size %}
-        {% assign next = sorted_docs[next_index] %}
-      {% endif %}
+            {% if next_index < sorted_docs.size %}
+                {% assign next = sorted_docs[next_index] %}
+            {% endif %}
       
-      {% break %}
-    {% endif %}
-  {% endfor %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
     <nav>
         <ul>
             <li>
                 {% if prev %}
-                    <a href="{{ prev.url | relative_url }}">&larr; Назад: {{ prev.title }}</a>
+                    <a href="{{ prev.url | relative_url }}" role="button">
+                    &larr; Назад: {{ prev.title }}</a>
                 {% endif %}
             </li>
             <li>
                 {% if next %}
-                    <a href="{{ next.url | relative_url }}">Вперед: {{ next.title }} &rarr;</a>
+                    <a href="{{ next.url | relative_url }}" role="button">
+                    Вперед: {{ next.title }} &rarr;</a>
                 {% endif %}
             </li>
         </ul>

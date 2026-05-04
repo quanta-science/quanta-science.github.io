@@ -7,15 +7,23 @@ collections:
   math:
     output: true
     permalink: /math/:path/
+    nav_order: 1
+    meta_label: Математика
   phys:
     output: true
     permalink: /phys/:path/
+    nav_order: 2
+    meta_label: Физика
   chem:
     output: true
     permalink: /chem/:path/
+    nav_order: 3
+    meta_label: Химия
   misc:
     output: true
     permalink: /misc/:path/
+    nav_order: 4
+    meta_label: Разное
 
 plugins:
   - jekyll-sitemap

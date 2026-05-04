@@ -17,8 +17,8 @@ sitemap: true
     {% if docs.size > 0 %}
         {% assign sorted_pages = docs | sort: "order" %}
 
-        <br><details>
-        <summary role="button">{{ col.meta_label }}</summary>
+        <details>
+        <summary role="button"><strong>{{ col.meta_label }}</strong></summary>
 
         <ul>
             {% for item in sorted_pages %}

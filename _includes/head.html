@@ -10,13 +10,17 @@
     <meta property="og:title" content="{{ page.og_title | default: page.title }}">
     <meta property="og:description" content="{{ page.og_description | default: page.description }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:image" content="{{ page.image | default: site.default_image }}">
+    {% case page.view %}
+        {% when "home" %}
+            <meta property="og:image" content="{{ '/assets/img/preview.png' | relative_url }}">
+        {% when "nav", "topic" %}
+            <meta property="og:image" content="{{ '/assets/img/og-preview.png' | relative_url }}">
+    {% endcase %}
     <meta property="og:type" content="website">
     <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml"/>
     <!--добавить скрипты !!!-->
     <link rel="stylesheet" href="{{ '/assets/css/pico.classless.min.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    
     {% if page.math %}
         {% include mathjax.html %}
     {% endif %}

@@ -4,7 +4,7 @@
         "@graph": [
             {
                 "@type": ["ProfessionalService", "EducationalOrganization"],
-                "@id": "https://quanta-science.github.io",
+                "@id": "{{ site.url }}",
                 "name": "Quanta Science",
                 "description": "Индивидуальная система тренингов по математике, физике и химии для учеников из стран СНГ от специалиста с ученой степенью. Глубокая подготовка к ЕГЭ, ЕНТ, ЦТ, НИШ и международным программам (IB, A-Level). Ликвидация пробелов и развитие когнитивной автономности онлайн.",
                 "address": {
@@ -14,10 +14,10 @@
                 },
                 "location": {
                     "@type": "VirtualLocation",
-                    "url": "https://quanta-science.github.io"
+                    "url": "{{ site.url }}"
                 },
                 "areaServed": ["KZ", "RU", "BY", "UZ", "KG", "AZ"],
-                "subjectOf": { "@id": "https://quanta-science.github.io/#faq" },
+                "subjectOf": { "@id": "{{ '/#faq' | relative_url }}" },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Образовательные услуги",
@@ -47,11 +47,11 @@
                 },
                 "telephone": "+77071011937",
                 "priceRange": "$$",
-                "image": "https://quanta-science.github.io/preview.png"
+                "image": "{{ '/assets/img/preview.png' | relative_url }}"
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://quanta-science.github.io/#faq",
+                "@id": "{{ '/#faq' | relative_url }}",
                 "mainEntity": [
                     {
                         "@type": "Question",

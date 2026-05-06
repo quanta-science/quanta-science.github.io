@@ -9,14 +9,14 @@
         "author": {
             "@type": "Organization",
             "name": "Quanta Science",
-            "url": "https://quanta-science.github.io"
+            "url": "{{ site.url }}"
         },
         "publisher": {
             "@type": "Organization",
             "name": "Quanta Science",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://quanta-science.github.io/assets/img/logo.svg",
+                "url": "{{ '/assets/img/logo.svg' | relative_url }}",
                 "width": "500", 
                 "height": "500"
             }
@@ -25,6 +25,6 @@
             "@type": "WebPage",
             "@id": "{{ page.url }}"
         },
-        "image": "https://quanta-science.github.io/assets/img/og-preview.png",
+        "image": "{{ '/assets/img/og-preview.png' | relative_url }}",
     }
 </script>

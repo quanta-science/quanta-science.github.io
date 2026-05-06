@@ -4,7 +4,8 @@
         "@type": "Article",
         "headline": "{{ page.title }}",
         "description": "{{ page.description }}",
-        "datePublished": "{{ page.date }}"
+        "datePublished": "{{ page.date }}",
+        "dateModified": "{{ page.modified }}",
         "author": {
             "@type": "Organization",
             "name": "Quanta Science",
@@ -27,3 +28,28 @@
         "image": "https://quanta-science.github.io/assets/img/og-preview.png",
     }
 </script>
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      },
+      "datePublished": "2026-05-01",
+      
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://example.com/math/powers"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Математика"
+        },
+        {
+          "@type": "Thing",
+          "name": "Степени"
+        }
+      }
+    }
+  ]
+}

@@ -4,6 +4,7 @@
         "@type": "Article",
         "headline": "{{ page.title }}",
         "description": "{{ page.description }}",
+        "datePublished": "{{ page.date }}"
         "author": {
             "@type": "Organization",
             "name": "Quanta Science",
@@ -14,14 +15,15 @@
             "name": "Quanta Science",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://quanta-science.ru/logo.png"
+                "url": "https://quanta-science.github.io/assets/img/logo.svg",
+                "width": "500", 
+                "height": "500"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://quanta-science.ru/physics/ohm-law"
+            "@id": "{{ page.url }}"
         },
-        "image": "https://quanta-science.ru/images/physics-preview.jpg",
-        "datePublished": "2024-05-06T08:00:00+05:00"
+        "image": "https://quanta-science.github.io/assets/img/og-preview.png",
     }
 </script>

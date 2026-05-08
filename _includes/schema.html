@@ -8,8 +8,11 @@
         "dateModified": "{{ page.last_modified_at }}",
         "author": {
             "@type": "Organization",
-            "name": "Quanta Science",
-            "url": "{{ site.url }}"
+            "@id": "{{ site.url }}",
+            "name": "Quanta Science"
+        },
+        "creator": {
+            "@id": "{{ '/#murat' | relative_url }}"
         },
         "publisher": {
             "@type": "Organization",
@@ -23,12 +26,16 @@
         },
         "reviewedBy": [
             {
-                "@id": "{{ '/#murat' | relative_url }}"
+                "@type": "Person",
+                "@id": "{{ '/#murat' | relative_url }}",
+                "name": "Murat Aliyev"
             },
             {
-                "@id": "{{ '/#ayat' | relative_url }}"
+                "@type": "Person",
+                "@id": "{{ '/#ayat' | relative_url }}",
+                "name": "Ayat Kairakbaev"
             }
-        ]
+        ],
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "{{ page.url }}"
@@ -38,7 +45,7 @@
         "educationalLevel": "Secondary School"
     }
 </script>
-<!--Quiz, BreadcrumbList, founder, reviewedBy, -->
+<!--Quiz, BreadcrumbList -->
 <!--Чтобы поисковик «запомнил» бренд, создайте отдельную страницу «Об организации» 
 (About) и разместите там JSON-LD с типом EducationalOrganization. 
 В статьях же делайте ссылку на эту организацию через @id-->

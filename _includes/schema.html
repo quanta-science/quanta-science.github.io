@@ -9,10 +9,18 @@
         "@graph": [
             {
                 "@type": "Article",
-                "headline": "{{ page.title }}",
-                "description": "{{ page.description }}",
-                "datePublished": "{{ page.date }}",
-                "dateModified": "{{ page.last_modified_at }}",
+                "headline": {{ page.title | jsonify }},
+                "description": {{ page.description | jsonify }},
+                {% if page.date %}"datePublished": "{{ page.date | date_to_xmlschema }}",{% endif %}
+                "dateModified": "
+                    {% if page.last_modified_at %}
+                        {{ page.last_modified_at | date_to_xmlschema }}
+                    {% else %}
+                        {% if page.date %}
+                            {{ page.date | date_to_xmlschema }}
+                        {% endif %}
+                    {% endif %}
+                ",
                 "author": {
                     "@type": "Organization",
                     "@id": "{{ site.url }}",
@@ -34,24 +42,24 @@
                 "reviewedBy": [
                     {
                         "@type": "Person",
-                        "@id": "{{ '/#murat' | relative_url }}",
+                        "@id": "{{ site.url }}/#murat",
                         "name": "Murat Aliyev"
                     },
                     {
                         "@type": "Person",
-                        "@id": "{{ '/#ayat' | relative_url }}",
+                        "@id": "{{ site.url }}/#ayat",
                         "name": "Ayat Kairakbaev"
                     }
                 ],
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "{{ page.url }}"
+                    "@id": "{{ page.url | absolute_url }}"
                 },
                 "image": "{{ '/assets/img/og-preview.png' | relative_url }}",
                 "learningResourceType": "Reference Material",
                 "educationalLevel": "Secondary School"
-            },
-            {% if rubric_name %}
+            }
+            {% if rubric_name %},
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
@@ -70,7 +78,7 @@
                     {
                     "@type": "ListItem",
                     "position": 3,
-                    "name": "{{ page.title }}",
+                    "name": {{ page.title | jsonify }},
                     "item": "{{ site.url }}{{ page.url }}"
                     }
                 ]

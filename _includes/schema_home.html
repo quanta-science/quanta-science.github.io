@@ -3,6 +3,22 @@
         "@context": "https://schema.org",
         "@graph": [
             {
+                "@type": "Person",
+                "name": "Murat Aliyev",
+                "@id": "{{ '/#murat' | relative_url }}",
+                "sameAs": "https://orcid.org/0009-0000-7148-2623",
+                "jobTitle": "Инженер, преподаватель химии, физики и математики, кандидат химических наук",
+                "description": "Специалист в области инженерного ПО и технических наук."
+            },
+            {
+                "@type": "Person",
+                "name": "Ayat Kairakbaev",
+                "@id": "{{ '/#ayat' | relative_url }}",
+                "sameAs": "https://orcid.org/0000-0002-4416-4782",
+                "jobTitle": "Преподаватель физики и математики, доктор физико-математических наук, профессор",
+                "description": "Специалист в области естествознания и технических наук."
+            },
+            {
                 "@type": ["ProfessionalService", "EducationalOrganization"],
                 "@id": "{{ site.url }}",
                 "name": "Quanta Science",
@@ -15,6 +31,9 @@
                 "location": {
                     "@type": "VirtualLocation",
                     "url": "{{ site.url }}"
+                },
+                "founder": {
+                    "@id": "{{ '/#murat' | relative_url }}"
                 },
                 "areaServed": ["KZ", "RU", "BY", "UZ", "KG", "AZ"],
                 "subjectOf": { "@id": "{{ '/#faq' | relative_url }}" },

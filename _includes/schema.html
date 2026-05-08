@@ -16,7 +16,8 @@
                 "author": {
                     "@type": "Organization",
                     "@id": "{{ site.url }}",
-                    "name": "Quanta Science"
+                    "name": "Quanta Science",
+                    "url": "{{ site.url }}/"
                 },
                 "creator": {
                     "@id": "{{ '/#murat' | relative_url }}"
@@ -31,21 +32,21 @@
                         "height": "500"
                     }
                 },
-                "reviewedBy": [
-                    {
-                        "@type": "Person",
-                        "@id": "{{ site.url }}/#murat",
-                        "name": "Murat Aliyev"
-                    },
-                    {
-                        "@type": "Person",
-                        "@id": "{{ site.url }}/#ayat",
-                        "name": "Ayat Kairakbaev"
-                    }
-                ],
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "{{ page.url | absolute_url }}"
+                    "@id": "{{ page.url | absolute_url }}",
+                    "reviewedBy": [
+                        {
+                            "@type": "Person",
+                            "@id": "{{ site.url }}/#murat",
+                            "name": "Murat Aliyev"
+                        },
+                        {
+                            "@type": "Person",
+                            "@id": "{{ site.url }}/#ayat",
+                            "name": "Ayat Kairakbaev"
+                        }
+                    ]
                 },
                 "image": "{{ '/assets/img/og-preview.png' | absolute_url }}",
                 "learningResourceType": "Reference Material",

@@ -2,7 +2,7 @@
 layout: default
 title: Математика
 description: "Эта страница содержит список всех справочников и публикаций сайта по математике. 
-Это временно."
+Это временный контент для этой страницы."
 order: 10
 math: false
 view: "nav"
@@ -10,27 +10,8 @@ published: true
 sitemap: true
 ---
 
-{% assign nav_collections = site.collections | where: "nav", true | sort: "nav_order" %}
-{% for col in nav_collections %}
-    {% assign dict_name = col.label %}
-    {% assign docs = site[dict_name] %}
-
-    {% if docs.size > 0 %}
-        {% assign sorted_pages = docs | sort: "order" %}
-
-        <details open>
-        <summary role="button"><strong>{{ col.meta_label }}</strong></summary>
-
-        <ul>
-            {% for item in sorted_pages %}
-            <li>
-                <a href="{{ item.url | relative_url }}">
-                {{ item.title }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        </details>
-
-    {% endif %}
-{% endfor %}
+<ul>
+    {% for item in site.math %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>

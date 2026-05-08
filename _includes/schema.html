@@ -26,7 +26,7 @@
                     "name": "Quanta Science",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "{{ '/assets/img/logo.svg' | relative_url }}",
+                        "url": "{{ '/assets/img/logo.svg' | absolute_url }}",
                         "width": "500", 
                         "height": "500"
                     }
@@ -47,7 +47,7 @@
                     "@type": "WebPage",
                     "@id": "{{ page.url | absolute_url }}"
                 },
-                "image": "{{ '/assets/img/og-preview.png' | relative_url }}",
+                "image": "{{ '/assets/img/og-preview.png' | absolute_url }}",
                 "learningResourceType": "Reference Material",
                 "educationalLevel": "Secondary School"
             }
@@ -71,7 +71,7 @@
                     "@type": "ListItem",
                     "position": 3,
                     "name": {{ page.title | jsonify }},
-                    "item": "{{ site.url }}{{ page.url }}"
+                    "item": "{{ page.url | absolute_url }}"
                     }
                 ]
             }

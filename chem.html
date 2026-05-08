@@ -1,0 +1,17 @@
+---
+layout: default
+title: Химия
+description: "Эта страница содержит список всех справочников и публикаций сайта по химии. 
+Это временный контент для этой страницы."
+order: 30
+math: false
+view: "nav"
+published: true
+sitemap: true
+---
+
+<ul>
+    {% for item in site.chem %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>

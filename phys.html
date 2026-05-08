@@ -1,0 +1,17 @@
+---
+layout: default
+title: Физика
+description: "Эта страница содержит список всех справочников и публикаций сайта по физике. 
+Это временный контент для этой страницы."
+order: 20
+math: false
+view: "nav"
+published: true
+sitemap: true
+---
+
+<ul>
+    {% for item in site.phys %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>

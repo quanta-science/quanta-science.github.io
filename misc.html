@@ -1,0 +1,17 @@
+---
+layout: default
+title: Разное
+description: "Эта страница содержит список всех справочников и публикаций сайта на разные темы. 
+Это временный контент для этой страницы."
+order: 40
+math: false
+view: "nav"
+published: true
+sitemap: true
+---
+
+<ul>
+    {% for item in site.misc %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>

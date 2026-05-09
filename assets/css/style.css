@@ -87,3 +87,9 @@ margin-right: 0;
 .formulae {
     overflow: auto;
 }
+/* чтобы все квизы были вертикальными */
+lite-youtube {
+    max-width: 360px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+}

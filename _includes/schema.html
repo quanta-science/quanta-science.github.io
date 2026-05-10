@@ -15,22 +15,22 @@
                 "dateModified": "{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% elsif page.date %}{{ page.date | date_to_xmlschema }}{% endif %}",
                 "author": {
                     "@type": "Organization",
-                    "@id": "{{ site.url }}",
+                    "@id": "{{ '/#organization' | site.url }}",
                     "name": "Quanta Science",
-                    "url": "{{ site.url }}/"
-                },
-                "creator": {
-                    "@id": "{{ '/#murat' | relative_url }}"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Quanta Science",
+                    "url": "{{ site.url }}/",
                     "logo": {
                         "@type": "ImageObject",
                         "url": "{{ '/assets/img/logo.svg' | absolute_url }}",
                         "width": "500", 
                         "height": "500"
                     }
+                },
+                "creator": {
+                    "@id": "{{ '/#murat' | relative_url }}"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "@id": "{{ '/#organization' | site.url }}"
                 },
                 "mainEntityOfPage": {
                     "@type": "WebPage",

@@ -60,13 +60,13 @@
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Quanta Science",
-                    "item": "{{ site.url }}/"
+                    "item": "{{ '/' | absolute_url }}"
                     },
                     {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "{{ rubric_name | jsonify }}",
-                    "item": "{{ rubric_key | absolute_url }}"
+                    "name": {{ rubric_name | jsonify }},
+                    "item": "{{ rubric_key | append: '/' | absolute_url }}"
                     },
                     {
                     "@type": "ListItem",

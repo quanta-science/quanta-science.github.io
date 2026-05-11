@@ -84,17 +84,18 @@
                 "name": {{ page.title | append: " - Тест" | jsonify }},
                 "about": { "@id": "{{ '/#organization' | absolute_url }}" },
                 "learningResourceType": "Practice Problem",
-
                 "hasPart": [
                     {% for quiz in page.quizzes %}
                     {
                     "@type": "Question",
                     "name": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
+                    "assesses": {{ page.title | jsonify }},
                     "suggestedAnswer": [
                         {% for option in quiz.options %}
                         {
                         "@type": "Answer",
-                        "text": {{ option.text_stripped | default: option.text | jsonify }}
+                        "text": {{ option.text_stripped | default: option.text | jsonify }},
+                        "encodingType": "text/html"
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],
@@ -104,6 +105,11 @@
                         {
                             "@type": "Answer",
                             "text": {{ option.text_stripped | default: option.text | jsonify }}
+                            "encodingType": "text/html",
+                            "comment": {
+                                "@type": "Comment",
+                                "text": "Правильный ответ"
+                            }
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ]}{% unless forloop.last %},{% endunless %}

@@ -86,7 +86,7 @@
                     {% for quiz in page.quizzes %}
                     {
                     "@type": "Question",
-                    "name": "{% if quiz.question_text_stripped != '' %}{{ quiz.question_text_stripped }}{% else %}{{ quiz.question_text }}{% endif %}",
+                    "name": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "suggestedAnswer": [
                         {% for option in quiz.options %}
                         {

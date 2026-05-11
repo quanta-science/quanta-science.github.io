@@ -8,13 +8,14 @@
                         <p>{{ page.description }}</p>
                     {% endif %}
                 </header>
-                {{ content }}
-                <footer>
+                    {{ content }}
+                    <hr>
                     {% include quiz.html %}
+                <footer>
+                    <p>Обновлено: 11 мая 2026</p>
+                    {% include prevnext.html %}
                 </footer>
-                
             </article>
-            {% include prevnext.html %}
             {% include cta.html %}
         {% when "nav" %}
             <article>

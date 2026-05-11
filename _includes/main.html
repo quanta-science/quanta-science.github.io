@@ -9,7 +9,10 @@
                     {% endif %}
                 </header>
                 {{ content }}
-                {% include quiz.html %}
+                <footer>
+                    {% include quiz.html %}
+                </footer>
+                
             </article>
             {% include prevnext.html %}
             {% include cta.html %}

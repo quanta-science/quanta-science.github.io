@@ -17,7 +17,7 @@
                     "@type": "Organization",
                     "@id": "{{ '/#organization' | site.url }}",
                     "name": "Quanta Science",
-                    "url": "{{ site.url }}/",
+                    "url": "{{ site.url }}",
                     "logo": {
                         "@type": "ImageObject",
                         "url": "{{ '/assets/img/logo.svg' | absolute_url }}",
@@ -91,7 +91,7 @@
                         {% for option in quiz.options %}
                         {
                         "@type": "Answer",
-                        "text": "{% if option.text_stripped != '' %}{{ option.text_stripped }}{% else %}{{ option.text }}{% endif %}"
+                        "text": {{ option.text_stripped | default: option.text | jsonify }}
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],

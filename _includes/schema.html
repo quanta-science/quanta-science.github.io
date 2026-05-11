@@ -1,6 +1,6 @@
 {% assign url_parts = page.url | split: "/" %}
 {% assign rubric_key = url_parts[1] %}
-{% assign current_collection = site.collections | find: "label", rubric_key %}
+{% assign current_collection = site.collections | where: "label", rubric_key | first %}
 {% assign rubric_name = current_collection.meta_label %}
 
 <script type="application/ld+json">
@@ -81,7 +81,7 @@
             {
                 "@type": "Quiz",
                 "about": { "@id": "https://quanta-science.github.io/#organization" },
-                "name": "{{ page.title }} - Тест",
+                "name": {{ page.title | append: " - Тест" | jsonify }},
                 "hasPart": [
                     {% for quiz in page.quizzes %}
                     {

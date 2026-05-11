@@ -93,3 +93,26 @@ lite-youtube {
     aspect-ratio: 9 / 16;
     margin: 0 auto;
 }
+.correct {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+.incorrect {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+.missed {
+    border: 2px solid #28a745;
+}
+.option-label {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.quiz-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}

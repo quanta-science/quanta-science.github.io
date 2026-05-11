@@ -1,0 +1,29 @@
+{% if page.quizzes %}
+    <section class="quiz-container" id="quiz-section">
+    {% for quiz in page.quizzes %}
+        <div class="quiz-item" data-quiz-index="{{ forloop.index0 }}">
+            <div class="quiz-question">{{ quiz.question_text }}</div>
+            <div class="quiz-options">
+                {% for option in quiz.options %}
+                    <label class="option-label">
+                        <input type="checkbox" class="quiz-check"
+                        data-correct="{{ option.is_correct }}">
+                        <span>{{ option.text }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+            <button type="button" class="quiz-submit-btn" onclick="checkQuiz(this)">
+            Ответить
+            </button>
+            <details class="quiz-solution" style="display: none;" role="button">
+                <summary>Посмотреть разбор решения</summary>
+                <div class="video-wrapper">
+                    <!-- Пример для YouTube -->
+                    <lite-youtube videoid="{{ quiz.video_id }}" 
+                    playlabel="Смотреть решение"></lite-youtube>
+                </div>
+            </details>
+        </div>
+  {% endfor %}
+</section>
+{% endif %}

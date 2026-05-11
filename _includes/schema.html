@@ -80,8 +80,11 @@
             {% if page.quizzes %},
             {
                 "@type": "Quiz",
-                "about": { "@id": "{{ '/#organization' | absolute_url }}" },
+                "@id": "{{ page.url | absolute_url }}#quiz-section",
                 "name": {{ page.title | append: " - Тест" | jsonify }},
+                "about": { "@id": "{{ '/#organization' | absolute_url }}" },
+                "learningResourceType": "Practice Problem",
+
                 "hasPart": [
                     {% for quiz in page.quizzes %}
                     {

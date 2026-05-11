@@ -12,7 +12,7 @@
                     <hr>
                     {% include quiz.html %}
                 <footer>
-                    <p>Обновлено: 11 мая 2026</p>
+                    <p>Обновлено: {{ page.last_modified_at | date: "%d.%m.%Y" }}</p>
                     {% include prevnext.html %}
                 </footer>
             </article>

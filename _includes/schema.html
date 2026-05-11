@@ -50,7 +50,8 @@
                 },
                 "image": "{{ '/assets/img/og-preview.png' | absolute_url }}",
                 "learningResourceType": "Reference Material",
-                "educationalLevel": "Secondary School"
+                "educationalLevel": "Secondary School",
+                "subjectOf": { "@id": "{{ page.url | absolute_url }}#quiz-section" }
             }
             {% if rubric_name %},
             {

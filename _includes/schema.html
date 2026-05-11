@@ -80,7 +80,7 @@
             {% if page.quizzes %},
             {
                 "@type": "Quiz",
-                "about": { "@id": "https://quanta-science.github.io/#organization" },
+                "about": { "@id": "{{ '/#organization' | absolute_url }}" },
                 "name": {{ page.title | append: " - Тест" | jsonify }},
                 "hasPart": [
                     {% for quiz in page.quizzes %}

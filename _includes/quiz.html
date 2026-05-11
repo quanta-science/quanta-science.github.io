@@ -1,5 +1,6 @@
 {% if page.quizzes %}
     <section class="quiz-container" id="quiz-section">
+        <p>Можете потренироваться в решении следующих задач и примеров.</p>
     {% for quiz in page.quizzes %}
         <div class="quiz-item" data-quiz-index="{{ forloop.index0 }}">
             <div class="quiz-question">{{ quiz.question_text }}</div>
@@ -15,7 +16,7 @@
             <button type="button" class="quiz-submit-btn" onclick="checkQuiz(this)">
             Ответить
             </button>
-            <details class="quiz-solution" style="display: none;" role="button">
+            <details class="quiz-solution" style="display: none;">
                 <summary>Посмотреть разбор решения</summary>
                 <div class="video-wrapper">
                     <!-- Пример для YouTube -->

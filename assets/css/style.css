@@ -1,6 +1,5 @@
-button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"] {
+summary {
     width: auto;
-    display: inline-block;
 }
 .logo {
     display: inline-block;

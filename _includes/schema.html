@@ -103,7 +103,7 @@
                             "text": {{ option.text_stripped | default: option.text | jsonify }}
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
-                    ]{% unless forloop.last %},{% endunless %}
+                    ]}{% unless forloop.last %},{% endunless %}
                     {% endfor %}
                 ]
             }

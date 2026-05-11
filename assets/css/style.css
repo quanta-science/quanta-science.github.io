@@ -1,3 +1,7 @@
+button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"] {
+    width: auto;
+    display: inline-block;
+}
 .logo {
     display: inline-block;
     width: 6em;

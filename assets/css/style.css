@@ -1,4 +1,4 @@
-summary {
+details summary[role=button] {
     width: auto;
 }
 .logo {

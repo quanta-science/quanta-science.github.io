@@ -77,6 +77,41 @@
                 ]
             }
             {% endif %}
+            {% if page.quizzes %},
+            {
+                "@type": "Quiz",
+                "about": { "@id": "https://quanta-science.github.io/#organization" },
+                "name": "{{ page.title }} - Тест",
+                "hasPart": [
+                    {% for quiz in page.quizzes %}
+                    {
+                    "@type": "Question",
+                    "name": "{% if quiz.question_text_stripped != '' %}{{ quiz.question_text_stripped }}{% else %}{{ quiz.question_text }}{% endif %}",
+                    "suggestedAnswer": [
+                        {% for option in quiz.options %}
+                        {
+                        "@type": "Answer",
+                        "text": "{% if option.text_stripped != '' %}{{ option.text_stripped }}{% else %}{{ option.text }}{% endif %}"
+                        }{% unless forloop.last %},{% endunless %}
+                        {% endfor %}
+                    ],
+                    "acceptedAnswer": [
+                        {% for option in quiz.options %}{% if option.is_correct %}
+                        {
+                        "@type": "Answer",
+                        "text": "{% if option.text_stripped != '' %}{{ option.text_stripped }}{% else %}{{ option.text }}{% endif %}"
+                        }
+                        {% endif %}{% endfor %}
+                    ]
+                    }{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                ]
+            }
+            {% endif %}
         ]
     }
 </script>
+
+
+
+    

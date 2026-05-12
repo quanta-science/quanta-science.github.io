@@ -1,9 +1,12 @@
 {% if page.quizzes %}
 <section class="quiz-container" id="quiz-section">
-    <h2>Вопросы для самопроверки. {{ page.quizzes.name | jsonify }}</h2>
+    <h2>Вопросы для самопроверки. {{ page.quizzes.name }}</h2>
     {% for quiz in page.quizzes.items %}
-        <div class="quiz-item" data-quiz-index="{{ forloop.index0 }}">
-            <div class="quiz-question">{{ quiz.question_text }}</div>
+        <div class="quiz-item" data-quiz-index="{{ forloop.index }}">
+            <div class="quiz-question">
+                {{ quiz.question_text }}
+                <strong>Вопрос {{ forloop.index }}.</strong> {{ quiz.question_text }}
+            </div>
             <div class="quiz-options">
                 {% for option in quiz.options %}
                     <label class="option-label">
@@ -16,14 +19,15 @@
             <button type="button" class="quiz-submit-btn" onclick="checkQuiz(this)">
             Ответить
             </button>
+            {% if quiz.video_id %}
             <details class="quiz-solution" style="display: none;">
                 <summary role="button">Посмотреть разбор решения</summary>
                 <div class="video-wrapper">
-                    <!-- Пример для YouTube -->
                     <lite-youtube videoid="{{ quiz.video_id }}" 
                     playlabel="Смотреть решение"></lite-youtube>
                 </div>
             </details>
+            {% endif %}
         </div>
   {% endfor %}
 </section>

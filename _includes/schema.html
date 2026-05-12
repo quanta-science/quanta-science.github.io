@@ -82,10 +82,7 @@
             {
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
-                "about": {
-                    "@type": "Thing",
-                    "name": {{ page.quizzes.name | jsonify }}
-                },
+                "name": {{ page.quizzes.name | jsonify }},
                 "educationalAlignment": [
                     {
                         "@type": "AlignmentObject",

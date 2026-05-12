@@ -105,12 +105,11 @@
                     "@type": "Question",
                     "eduQuestionType": "Checkbox",
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
-                    "assesses": {{ page.title | jsonify }},
                     "suggestedAnswer": [
                         {% for option in quiz.options %}
                         {
-                        "@type": "Answer",
-                        "text": {{ option.text_stripped | default: option.text | jsonify }}
+                            "@type": "Answer",
+                            "text": {{ option.text_stripped | default: option.text | jsonify }}
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],
@@ -119,14 +118,11 @@
                         {% for option in correct_options %}
                         {
                             "@type": "Answer",
-                            "text": {{ option.text_stripped | default: option.text | jsonify }},
-                            "comment": {
-                                "@type": "Comment",
-                                "text": "Правильный ответ"
-                            }
+                            "text": {{ option.text_stripped | default: option.text | jsonify }}
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
-                    ]}{% unless forloop.last %},{% endunless %}
+                    ]
+                    }{% unless forloop.last %},{% endunless %}
                     {% endfor %}
                 ]
             }

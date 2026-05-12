@@ -83,7 +83,6 @@
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
                 "name": {{ page.title | append: " - Тест" | jsonify }},
-                "about": { "@id": "{{ '/#organization' | absolute_url }}" },
                 "learningResourceType": "Practice Problem",
                 "educationalLevel": "{{ page.educationalLevel | jsonify }}",
                 "hasPart": [

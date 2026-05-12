@@ -104,7 +104,7 @@
                     {
                     "@type": "Question",
                     "eduQuestionType": "Checkbox",
-                    "name": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
+                    "name": {{ page.quizzes.name | append: ": Вопрос " | append: forloop.index | jsonify }},
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "suggestedAnswer": [
                         {% for option in quiz.options %}

@@ -85,7 +85,7 @@
                 "name": {{ page.title | append: " - Тест" | jsonify }},
                 "about": { "@id": "{{ '/#organization' | absolute_url }}" },
                 "learningResourceType": "Practice Problem",
-                "educationalLevel": "{{ page.educationalLevel }}",
+                "educationalLevel": "{{ page.educationalLevel | jsonify }}",
                 "hasPart": [
                     {% for quiz in page.quizzes %}
                     {

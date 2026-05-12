@@ -85,10 +85,12 @@
                 "name": {{ page.title | append: " - Тест" | jsonify }},
                 "about": { "@id": "{{ '/#organization' | absolute_url }}" },
                 "learningResourceType": "Practice Problem",
+                "educationalLevel": "{{ page.educationalLevel }}",
                 "hasPart": [
                     {% for quiz in page.quizzes %}
                     {
                     "@type": "Question",
+                    "eduQuestionType": "Checkbox",
                     "name": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "assesses": {{ page.title | jsonify }},
                     "suggestedAnswer": [

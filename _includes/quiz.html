@@ -1,7 +1,7 @@
 {% if page.quizzes %}
 <section class="quiz-container" id="quiz-section">
-        <h2>Вопросы для самопроверки. {{ page.quizzes.name | jsonify }}</h2>
-    {% for quiz in page.quizzes %}
+    <h2>Вопросы для самопроверки. {{ page.quizzes.name | jsonify }}</h2>
+    {% for quiz in page.quizzes.items %}
         <div class="quiz-item" data-quiz-index="{{ forloop.index0 }}">
             <div class="quiz-question">{{ quiz.question_text }}</div>
             <div class="quiz-options">

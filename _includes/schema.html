@@ -78,7 +78,7 @@
                 ]
             }
             {% endif %}
-            {% if page.quizzes %},
+            {% if page.quizzes %}
             {
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
@@ -100,10 +100,11 @@
                 ],
                 "learningResourceType": "Practice Problem",
                 "hasPart": [
-                    {% for quiz in page.quizzes %}
+                    {% for quiz in page.quizzes.items %}
                     {
                     "@type": "Question",
                     "eduQuestionType": "Checkbox",
+                    "name": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "suggestedAnswer": [
                         {% for option in quiz.options %}

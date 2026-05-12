@@ -82,9 +82,23 @@
             {
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
-                "name": {{ page.title | append: " - Тест" | jsonify }},
+                "about": {
+                    "@type": "Thing",
+                    "name": {{ page.quizzes.name | jsonify }}
+                },
+                "educationalAlignment": [
+                    {
+                        "@type": "AlignmentObject",
+                        "alignmentType": "educationalSubject",
+                        "targetName": {{ rubric_name | jsonify }}
+                    },
+                    {
+                        "@type": "AlignmentObject",
+                        "alignmentType": "educationalLevel",
+                        "targetName": {{ page.quizzes.educationalLevel | jsonify }}
+                    }
+                ],
                 "learningResourceType": "Practice Problem",
-                "educationalLevel": "{{ page.educationalLevel | jsonify }}",
                 "hasPart": [
                     {% for quiz in page.quizzes %}
                     {

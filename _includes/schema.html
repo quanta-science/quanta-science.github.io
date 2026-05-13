@@ -50,11 +50,9 @@
                     "@type": "WebPage",
                     "@id": "{{ page.url | absolute_url }}"
                 },
-                "image": "{{ '/assets/img/og-preview.png' | absolute_url }}",
-                "educationalLevel": "Secondary School"
+                "image": "{{ '/assets/img/og-preview.png' | absolute_url }}"
                 {% if page.quizzes %},"subjectOf": { "@id": "{{ page.url | absolute_url }}#quiz-section" }{% endif %}
-            }
-            {% if page.quizzes %},
+            }{% if page.quizzes %},
             {
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
@@ -98,9 +96,7 @@
                     }{% unless forloop.last %},{% endunless %}
                     {% endfor %}
                 ]
-            }
-            {% endif %}
-            {% if rubric_name %},
+            }{% endif %}{% if rubric_name %},
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [

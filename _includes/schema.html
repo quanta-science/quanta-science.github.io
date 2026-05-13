@@ -68,7 +68,7 @@
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "educationalLevel": {{ page.quizzes.educationalLevel | default: "Secondary School" | jsonify }},
                     "learningResourceType": "Reference Material",
-                    "encodingFormat" : [ "text/html" , "image/png" , "text/javascript" , "text/css" ],
+                    "encodingFormat" : "text/html",
                     "educationalAlignment": [
                         {
                             "@type": "AlignmentObject",
@@ -80,6 +80,7 @@
                         {% for option in quiz.options %}
                         {
                             "@type": "Answer",
+                            "encodingFormat" : "text/html",
                             "text": {{ option.text_stripped | default: option.text | jsonify }}
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}
@@ -89,6 +90,7 @@
                         {% for option in correct_options %}
                         {
                             "@type": "Answer",
+                            "encodingFormat" : "text/html",
                             "text": {{ option.text_stripped | default: option.text | jsonify }}
                         }{% unless forloop.last %},{% endunless %}
                         {% endfor %}

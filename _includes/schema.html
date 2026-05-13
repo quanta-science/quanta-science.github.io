@@ -51,7 +51,6 @@
                     "@id": "{{ page.url | absolute_url }}"
                 },
                 "image": "{{ '/assets/img/og-preview.png' | absolute_url }}",
-                "learningResourceType": "Reference Material",
                 "educationalLevel": "Secondary School"
                 {% if page.quizzes %},"subjectOf": { "@id": "{{ page.url | absolute_url }}#quiz-section" }{% endif %}
             }
@@ -60,7 +59,6 @@
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
                 "name": {{ page.quizzes.name | jsonify }},
-                
                 "hasPart": [
                     {% for quiz in page.quizzes.items %}
                     {
@@ -68,6 +66,15 @@
                     "eduQuestionType": "Multiple choice",
                     "name": {{ page.quizzes.name | append: ": Вопрос " | append: forloop.index | jsonify }},
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
+                    "educationalLevel": {{ page.quizzes.educationalLevel | default: "Secondary School" | jsonify }},
+                    "learningResourceType": "Reference Material",
+                    "educationalAlignment": [
+                        {
+                            "@type": "AlignmentObject",
+                            "alignmentType": "educationalSubject",
+                            "targetName": {{ rubric_name | jsonify }}
+                        }
+                    ],
                     "suggestedAnswer": [
                         {% for option in quiz.options %}
                         {

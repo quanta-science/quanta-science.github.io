@@ -9,7 +9,7 @@
         "@graph": [
             {
                 "@type": "Article",
-                "@id": "{{ page.url | absolute_url }}"
+                "@id": "{{ page.url | absolute_url }}",
                 "headline": {{ page.title | jsonify }},
                 "description": {{ page.description | jsonify }},
                 {% if page.date %}"datePublished": "{{ page.date | date_to_xmlschema }}",{% endif %}
@@ -37,12 +37,12 @@
                 "reviewedBy": [
                     {
                         "@type": "Person",
-                        "@id": "{{ '/#murat' | relative_url }}",
+                        "@id": "{{ '/#murat' | absolute_url }}",
                         "name": "Murat Aliyev"
                     },
                     {
                         "@type": "Person",
-                        "@id": "{{ '/#ayat' | relative_url }}",
+                        "@id": "{{ '/#ayat' | absolute_url }}",
                         "name": "Ayat Kairakbaev"
                     }
                 ],
@@ -94,7 +94,7 @@
                     {
                         "@type": "AlignmentObject",
                         "alignmentType": "educationalLevel",
-                        "targetName": {{ page.quizzes.educationalLevel | jsonify }}
+                        "targetName": {{ page.quizzes.educationalLevel | default: "Secondary School" | jsonify }}
                     }
                 ],
                 "hasPart": [

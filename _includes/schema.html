@@ -68,6 +68,7 @@
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "educationalLevel": {{ page.quizzes.educationalLevel | default: "Secondary School" | jsonify }},
                     "learningResourceType": "Reference Material",
+                    "encodingFormat" : [ "text/html" , "image/png" , "text/javascript" , "text/css" ],
                     "educationalAlignment": [
                         {
                             "@type": "AlignmentObject",

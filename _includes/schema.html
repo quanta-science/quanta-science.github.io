@@ -9,6 +9,7 @@
         "@graph": [
             {
                 "@type": "Article",
+                "@id": "{{ page.url | absolute_url }}"
                 "headline": {{ page.title | jsonify }},
                 "description": {{ page.description | jsonify }},
                 {% if page.date %}"datePublished": "{{ page.date | date_to_xmlschema }}",{% endif %}
@@ -100,7 +101,7 @@
                     {% for quiz in page.quizzes.items %}
                     {
                     "@type": "Question",
-                    "eduQuestionType": "Checkbox",
+                    "eduQuestionType": "Multiple choice",
                     "name": {{ page.quizzes.name | append: ": Вопрос " | append: forloop.index | jsonify }},
                     "text": {{ quiz.question_text_stripped | default: quiz.question_text | jsonify }},
                     "suggestedAnswer": [

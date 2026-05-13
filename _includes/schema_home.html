@@ -69,64 +69,70 @@
                 "image": "{{ '/assets/img/preview.png' | absolute_url }}"
             },
             {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                    "@type": "Course",
-                    "url": "{{ '/#one-year-math' | absolute_url }}",
-                    "name": "Вся школьная математика за 1 год",
-                    "description": "Интенсивный годовой индивидуальный онлайн-курс с живым участием преподавателя.",
-                    "courseMode": "online", 
-                    "hasCourseInstance": {
-                        "@type": "CourseInstance",
-                        "courseMode": "online",
-                        "courseWorkload": "P1Y" 
+                "@type": "ItemList",
+                "name": "Наши курсы",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Course",
+                            "url": "{{ '/#one-year-math' | absolute_url }}",
+                            "name": "Вся школьная математика за 1 год",
+                            "description": "Интенсивный годовой индивидуальный онлайн-курс с живым участием преподавателя.",
+                            "courseMode": "online", 
+                            "hasCourseInstance": {
+                                "@type": "CourseInstance",
+                                "courseMode": "online",
+                                "courseWorkload": "P1Y" 
+                            },
+                            "provider": {
+                                "@type": "Organization",
+                                "@id": "{{ '/#organization' | absolute_url }}"
+                            }
+                        }
                     },
-                    "provider": {
-                        "@type": "Organization",
-                        "@id": "{{ '/#organization' | absolute_url }}"
-                    }
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                    "@type": "Course",
-                    "url": "{{ '/#one-year-phys' | absolute_url }}",
-                    "name": "Вся школьная физика за 1 год",
-                    "description": "Интенсивный годовой индивидуальный онлайн-курс с живым участием преподавателя.",
-                    "courseMode": "online", 
-                    "hasCourseInstance": {
-                        "@type": "CourseInstance",
-                        "courseMode": "online",
-                        "courseWorkload": "P1Y" 
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Course",
+                            "url": "{{ '/#one-year-phys' | absolute_url }}",
+                            "name": "Вся школьная физика за 1 год",
+                            "description": "Интенсивный годовой индивидуальный онлайн-курс с живым участием преподавателя.",
+                            "courseMode": "online", 
+                            "hasCourseInstance": {
+                                "@type": "CourseInstance",
+                                "courseMode": "online",
+                                "courseWorkload": "P1Y" 
+                            },
+                            "provider": {
+                                "@type": "Organization",
+                                "@id": "{{ '/#organization' | absolute_url }}"
+                            }
+                        }
                     },
-                    "provider": {
-                        "@type": "Organization",
-                        "@id": "{{ '/#organization' | absolute_url }}"
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Course",
+                            "url": "{{ '/#one-year-chem' | absolute_url }}",
+                            "name": "Вся школьная химия за 1 год",
+                            "description": "Интенсивный годовой индивидуальный онлайн-курс с живым участием преподавателя.",
+                            "courseMode": "online", 
+                            "hasCourseInstance": {
+                                "@type": "CourseInstance",
+                                "courseMode": "online",
+                                "courseWorkload": "P1Y" 
+                            },
+                            "provider": {
+                                "@type": "Organization",
+                                "@id": "{{ '/#organization' | absolute_url }}"
+                            }
+                        }
                     }
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                    "@type": "Course",
-                    "url": "{{ '/#one-year-chem' | absolute_url }}",
-                    "name": "Вся школьная химия за 1 год",
-                    "description": "Интенсивный годовой индивидуальный онлайн-курс с живым участием преподавателя.",
-                    "courseMode": "online", 
-                    "hasCourseInstance": {
-                        "@type": "CourseInstance",
-                        "courseMode": "online",
-                        "courseWorkload": "P1Y" 
-                    },
-                    "provider": {
-                        "@type": "Organization",
-                        "@id": "{{ '/#organization' | absolute_url }}"
-                    }
-                }
+                ]
             },
             {
                 "@type": "FAQPage",

@@ -33,10 +33,10 @@
                     "url": "{{ site.url }}"
                 },
                 "founder": {
-                    "@id": "{{ '/#murat' | relative_url }}"
+                    "@id": "{{ '/#murat' | absolute_url }}"
                 },
                 "areaServed": ["KZ", "RU", "BY", "UZ", "KG", "AZ"],
-                "subjectOf": { "@id": "{{ '/#faq' | relative_url }}" },
+                "subjectOf": { "@id": "{{ '/#faq' | absolute_url }}" },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Образовательные услуги",
@@ -66,7 +66,7 @@
                 },
                 "telephone": "+77071011937",
                 "priceRange": "$$",
-                "image": "{{ '/assets/img/preview.png' | relative_url }}"
+                "image": "{{ '/assets/img/preview.png' | absolute_url }}"
             },
             {
                 "@type": "ListItem",
@@ -130,7 +130,7 @@
             },
             {
                 "@type": "FAQPage",
-                "@id": "{{ '/#faq' | relative_url }}",
+                "@id": "{{ '/#faq' | absolute_url }}",
                 "mainEntity": [
                     {
                         "@type": "Question",

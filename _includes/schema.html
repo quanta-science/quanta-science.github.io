@@ -55,30 +55,6 @@
                 "educationalLevel": "Secondary School"
                 {% if page.quizzes %},"subjectOf": { "@id": "{{ page.url | absolute_url }}#quiz-section" }{% endif %}
             }
-            {% if rubric_name %},
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Quanta Science",
-                    "item": "{{ '/' | absolute_url }}"
-                    },
-                    {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": {{ rubric_name | jsonify }},
-                    "item": "{{ rubric_key | append: '/' | absolute_url }}"
-                    },
-                    {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": {{ page.title | jsonify }},
-                    "item": "{{ page.url | absolute_url }}"
-                    }
-                ]
-            }{% endif %}
             {% if page.quizzes %},
             {
                 "@type": "Quiz",
@@ -125,6 +101,30 @@
                 ]
             }
             {% endif %}
+            {% if rubric_name %},
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Quanta Science",
+                    "item": "{{ '/' | absolute_url }}"
+                    },
+                    {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": {{ rubric_name | jsonify }},
+                    "item": "{{ rubric_key | append: '/' | absolute_url }}"
+                    },
+                    {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": {{ page.title | jsonify }},
+                    "item": "{{ page.url | absolute_url }}"
+                    }
+                ]
+            }{% endif %}
         ]
     }
 </script>

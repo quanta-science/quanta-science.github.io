@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}">
     {% if page.robots %}
@@ -11,15 +12,22 @@
     <link rel="canonical" href="{{ page.canonical | default: page.url | absolute_url }}">
     <link rel="alternate" hreflang="{{ page.lang | default: 'ru' }}" href="{{ page.url | absolute_url }}">
     <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+    <meta property="og:locale" content="ru_RU">
     <meta property="og:title" content="{{ page.og_title | default: page.title }}">
     <meta property="og:description" content="{{ page.og_description | default: page.description }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.og_title | default: page.title }}">
+    <meta name="twitter:description" content="{{ page.og_description | default: page.description }}">
     {% case page.view %}
         {% when "home" %}
-            <meta property="og:image" content="{{ '/assets/img/preview.png' | relative_url }}">
+            <meta property="og:image" content="{{ '/assets/img/preview.png' | absolute_url }}">
+            <meta name="twitter:image" content="{{ '/assets/img/preview.png' | absolute_url }}">
         {% when "nav", "topic" %}
-            <meta property="og:image" content="{{ '/assets/img/og-preview.png' | relative_url }}">
+            <meta property="og:image" content="{{ '/assets/img/og-preview.png' | absolute_url }}">
+            <meta name="twitter:image" content="{{ '/assets/img/og-preview.png' | absolute_url }}">
     {% endcase %}
+
     <meta property="og:type" content="website">
     <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml"/>
     <link rel="stylesheet" href="{{ '/assets/css/pico.classless.min.css' | relative_url }}">
@@ -32,6 +40,10 @@
         {% when "topic" %}
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css">
             <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js"></script>
+
+
+
+
             <script src="/assets/js/quiz.js"></script>
             {% include schema.html %}
         {% when "nav" %}

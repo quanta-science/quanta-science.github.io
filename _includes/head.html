@@ -9,9 +9,9 @@
     {% else %}
         <meta name="robots" content="index, follow">
     {% endif %}
-    <link rel="canonical" href="{{ page.canonical | default: page.url | absolute_url }}">
-    <link rel="alternate" hreflang="{{ page.lang | default: 'ru' }}" href="{{ page.url | absolute_url }}">
-    <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+    <link rel="canonical" href="{{ page.canonical | default: page.url | absolute_url }}"/>
+    <link rel="alternate" hreflang="{{ page.lang | default: 'ru' }}" href="{{ page.url | absolute_url }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}"/>
     <meta property="og:locale" content="ru_RU">
     <meta property="og:title" content="{{ page.og_title | default: page.title }}">
     <meta property="og:description" content="{{ page.og_description | default: page.description }}">
@@ -30,20 +30,16 @@
 
     <meta property="og:type" content="website">
     <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml"/>
-    <link rel="stylesheet" href="{{ '/assets/css/pico.classless.min.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/pico.classless.min.css' | relative_url }}"/>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"/>
     <!-- скрипты!!! -->
     {% if page.math %}
         {% include mathjax.html %}
     {% endif %}
     {% case page.view %}
         {% when "topic" %}
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css"/>
             <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js"></script>
-
-
-
-
             <script src="/assets/js/quiz.js"></script>
             {% include schema.html %}
         {% when "nav" %}

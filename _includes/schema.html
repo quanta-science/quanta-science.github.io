@@ -60,18 +60,7 @@
                 "@type": "Quiz",
                 "@id": "{{ page.url | absolute_url }}#quiz-section",
                 "name": {{ page.quizzes.name | jsonify }},
-                "educationalAlignment": [
-                    {
-                        "@type": "AlignmentObject",
-                        "alignmentType": "educationalSubject",
-                        "targetName": {{ rubric_name | jsonify }}
-                    },
-                    {
-                        "@type": "AlignmentObject",
-                        "alignmentType": "educationalLevel",
-                        "targetName": {{ page.quizzes.educationalLevel | default: "Secondary School" | jsonify }}
-                    }
-                ],
+                
                 "hasPart": [
                     {% for quiz in page.quizzes.items %}
                     {

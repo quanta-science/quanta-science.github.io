@@ -7,6 +7,11 @@ details summary[role=button] {
     width: 6em;
     height: 6em;
 }
+.head-logo li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
 /* Общие стили для обеих кнопок */
 .floating-wa, .floating-tg {
     position: fixed;

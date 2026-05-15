@@ -14,6 +14,21 @@
             </li>
         </ul>
     </nav>
+    <div>
+        <ul class="head-logo">
+            <li>
+                <img
+                    src="{{ '/assets/img/logo.svg' | relative_url }}"
+                    class="logo"
+                    alt="Quanta Science репетитор по физике и математике"
+                >
+            </li>
+            <li>
+                <h1>Онлайн-репетитор по математике, физике и химии</h1>
+                <kbd id="organization">Quanta Science</kbd>
+            </li>
+        </ul>
+    </div>
     {% case page.view %}
         {% when "topic" %}
             {% include for_header_topic.html %}

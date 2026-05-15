@@ -19,7 +19,7 @@ sitemap: true
         {% assign sorted_pages = docs | sort: "order" %}
 
         <details open>
-        <summary role="button"><strong>{{ col.meta_label }}</strong></summary>
+        <summary role="button">{{ col.meta_label }}</summary>
 
         <ul>
             {% for item in sorted_pages %}

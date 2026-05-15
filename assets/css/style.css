@@ -122,12 +122,12 @@ lite-youtube {
     padding-bottom: 20px;
 }
 
-.h-header {position: -webkit-sticky; position: sticky; top: 0; background: #9A0000; z-index: 1000;}
-.v-header {position: -webkit-sticky; position: sticky; left: 0; background: #9A0000; z-index: 500;}
-.h-font {color: white; font-weight: bold; text-align: center; font-size: 9pt;}
-.f-font {color: #9A0000; font-weight: bold; font-size: 9pt;}
+.h-header {position: -webkit-sticky; position: sticky; top: 0; background: #0172ad; z-index: 1000;}
+.v-header {position: -webkit-sticky; position: sticky; left: 0; background: #0172ad; z-index: 500;}
+.h-font {color: white; text-align: center;}
+
 div.h-header a {color: white; font-weight: bold; text-align: center;}
-.basic {table-layout: fixed; border: 1px solid #9A0000; overflow: scroll; border-collapse: collapse;}
+.basic {table-layout: fixed; border: 1px solid #0172ad; overflow: scroll; border-collapse: collapse;}
 .cdiv {border: 1px solid #FFFFFF;}
 .hdiv {border: 1px solid #FFFFFF;}
 .vdiv {border: 1px solid #FFFFFF;}
@@ -143,6 +143,6 @@ div.h-header a {color: white; font-weight: bold; text-align: center;}
 .mmain {font-size: 11pt; overflow: auto; width: 100%;}
 .lmain {font-size: 11pt; overflow: auto; width: 100%; height: 200px;}
 table {width: auto; height: auto; margin: 0;}
-td {border: 1px solid #9A0000; vertical-align: middle; text-align: center;}
+td {border: 1px solid #0172ad; vertical-align: middle; text-align: center;}
 .tdleft {text-align: left;}
 td.vdiv a, td.hdiv a, td.cdiv a {color: white;}

@@ -2,8 +2,9 @@ details summary[role=button] {
     width: auto;
     display: inline-block;
 }
-summary[role=button] h2, summary[role=button] h3 {
+details summary[role=button] h2, summary[role=button] h3 {
     color: white;
+    display: inline-block;
 }
 /* Общие стили для обеих кнопок */
 .floating-wa, .floating-tg {

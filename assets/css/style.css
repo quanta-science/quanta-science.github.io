@@ -2,6 +2,9 @@ details summary[role=button] {
     width: auto;
     display: inline-block;
 }
+summary[role=button] h2 {
+    color: white;
+}
 /* Общие стили для обеих кнопок */
 .floating-wa, .floating-tg {
     position: fixed;

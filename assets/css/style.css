@@ -4,6 +4,7 @@ details summary[role=button] {
 }
 summary[role=button] h2 {
     color: white;
+    font-size: 1 rem;
 }
 /* Общие стили для обеих кнопок */
 .floating-wa, .floating-tg {

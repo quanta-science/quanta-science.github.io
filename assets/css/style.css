@@ -122,26 +122,11 @@ lite-youtube {
     padding-bottom: 20px;
 }
 
-.h-header {position: -webkit-sticky; position: sticky; top: 0; background: #0172ad; z-index: 1000;}
-.v-header {position: -webkit-sticky; position: sticky; left: 0; background: #0172ad; z-index: 500;}
-.h-font {text-align: center;}
 
-div.h-header a {text-align: center;}
-.basic {table-layout: fixed; border: 1px solid #0172ad; overflow: scroll; border-collapse: collapse;}
-.cdiv {border: 1px solid #FFFFFF;}
-.hdiv {border: 1px solid #FFFFFF;}
-.vdiv {border: 1px solid #FFFFFF;}
-.borderless {border: 0 solid #9A000000;}
-.wrapp {display: table;}
-.bblock {display: table-cell; vertical-align: top;}
 .soluble {background: rgb(138, 213, 126);}
 .slightly {background: rgb(255, 254, 152);}
 .insoluble {background: rgb(215, 109, 109);}
 .elh2 {background:#E6B8B7;}
 .elh2me {background:#bFFF99;}
 .elme {background:#66FFFF;}
-.mmain {overflow: auto; width: 100%;}
-.lmain {overflow: auto; width: 100%; height: 200px;}
-table {width: auto; height: auto; margin: 0;}
-td {border: 1px solid #0172ad; vertical-align: middle; text-align: center;}
-.tdleft {text-align: left;}
+

@@ -5,6 +5,8 @@ details summary[role=button] {
 details summary[role=button] h2, summary[role=button] h3 {
     color: white;
     display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 /* Общие стили для обеих кнопок */
 .floating-wa, .floating-tg {

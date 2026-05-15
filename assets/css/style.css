@@ -4,8 +4,8 @@ details summary[role=button] {
 }
 .logo {
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
 }
 .head-logo {
     display: flex;

@@ -7,7 +7,25 @@ details summary[role=button] {
     width: 6em;
     height: 6em;
 }
-.head-logo li {
+.head-logo {
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+}
+.head-logo ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+.head-logo ul:first-of-type {
+    margin-left: -1rem;
+}
+.head-logo ul:last-of-type {
+    margin-right: -1rem;
+}
+.head-logo ul li {
     display: inline-block;
     margin: 0;
     padding: 0;

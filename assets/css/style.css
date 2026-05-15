@@ -126,7 +126,7 @@ lite-youtube {
 .v-header {position: -webkit-sticky; position: sticky; left: 0; background: #0172ad; z-index: 500;}
 .h-font {text-align: center;}
 
-div.h-header a {color: white; font-weight: bold; text-align: center;}
+div.h-header a {text-align: center;}
 .basic {table-layout: fixed; border: 1px solid #0172ad; overflow: scroll; border-collapse: collapse;}
 .cdiv {border: 1px solid #FFFFFF;}
 .hdiv {border: 1px solid #FFFFFF;}

@@ -9,57 +9,40 @@ published: true
 sitemap: true
 ---
 <style>
-        :root {
-            --bg-color: #1a1a1a;
-            --text-color: #ffffff;
-            --border-color: #444;
-            
-            /* Цвета для категорий элементов */
-            --alkali-metal: #ff6666;
-            --alkaline-earth-metal: #ffdead;
-            --transition-metal: #ffc0cb;
-            --metalloid: #cccc99;
-            --nonmetal: #a0f0a0;
-            --noble-gas: #c0ffff;
-            --lanthanide: #ffbfff;
-            --actinide: #ff99ff;
-            --post-transition-metal: #cccccc;
-            --unknown: #666666;
-        }
+    :root {
+        --border-color: #444;
+        --alkali-metal: #ff6666;
+        --alkaline-earth-metal: #ffdead;
+        --transition-metal: #ffc0cb;
+        --metalloid: #cccc99;
+        --nonmetal: #a0f0a0;
+        --noble-gas: #c0ffff;
+        --lanthanide: #ffbfff;
+        --actinide: #ff99ff;
+        --post-transition-metal: #cccccc;
+        --unknown: #666666;
+    }
 
-        /*body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 20px;
-        }*/
+    /* Сетка таблицы: 19 столбцов (1 для номеров периодов + 18 групп) */
+    .periodic-table {
+        display: grid;
+        grid-template-columns: 40px repeat(18, minmax(60px, 1fr));
+        grid-gap: 4px;
+        max-width: 1400px;
+        margin: 0 auto;
+        overflow-x: auto;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* Сетка таблицы: 19 столбцов (1 для номеров периодов + 18 групп) */
-        .periodic-table {
-            display: grid;
-            grid-template-columns: 40px repeat(18, minmax(60px, 1fr));
-            grid-gap: 4px;
-            max-width: 1400px;
-            margin: 0 auto;
-            overflow-x: auto;
-        }
-
-        /* Шапки групп и периодов */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            background-color: #2a2a2a;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
+    /* Шапки групп и периодов */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
 
         .group-header {
             padding: 5px 0;

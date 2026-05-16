@@ -39,5 +39,3 @@ plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at
   - jekyll-remote-theme
-
-remote_theme: mmistakes/minimal-mistakes

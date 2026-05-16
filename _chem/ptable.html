@@ -26,8 +26,8 @@ sitemap: true
     /* Сетка таблицы: 19 столбцов (1 для номеров периодов + 18 групп) */
     .periodic-table {
         display: grid;
-        grid-template-columns: 2.5rem repeat(18, minmax(4rem, 1fr));
-        gap: 0.25rem;
+        grid-template-columns: 2.5rem repeat(18, minmax(3.75rem, 1fr));
+        gap: 0.3rem;
         max-width: 87.5rem;
         margin: 0 auto;
         overflow-x: auto;
@@ -54,11 +54,12 @@ sitemap: true
         transition: transform 0.2s, box-shadow 0.2s;
         user-select: none;
         aspect-ratio: 1 / 1;
-        min-height: 4rem;
+        min-height: 3.75rem;
     }
 
     .element-cell:hover {
         transform: scale(1.08);
+        border: 2px solid #444;
         box-shadow: 0 0 0.625rem #555;
         z-index: 10;
     }

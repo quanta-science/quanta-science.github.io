@@ -11,6 +11,13 @@
                     <hr>
                     {% include quiz.html %}
                 <footer>
+                    {% if page.collection %}
+                        {% assign current_collection = site.collections | where: "label", page.collection | first %}
+                        {% if current_collection %}
+                            {% assign collection_url = current_collection.permalink | replace: ':path/', '' %}
+                            <a href="{{ collection_url }}">{{ current_collection.meta_label }}</a>
+                        {% endif %}
+                    {% endif %}
                     <p>Обновлено: {{ page.last_modified_at | date: "%d.%m.%Y" }}</p>
                     {% include prevnext.html %}
                 </footer>

@@ -126,7 +126,7 @@ lite-youtube {
     position: -webkit-sticky;
     position: sticky;
     left: 0;
-    z-index: 1000;
+    z-index: 500;
     background-color: rgb(252.5, 230.5, 191.5);
 }
 

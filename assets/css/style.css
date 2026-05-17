@@ -123,16 +123,16 @@ lite-youtube {
 }
 
 .sticky_table tr td:first-child, .sticky_table thead tr th:first-child {
-    position: sticky;
     position: -webkit-sticky;
+    position: sticky;
     left: 0;
     z-index: 500;
     background-color: rgb(252.5, 230.5, 191.5);
 }
 
 .sticky_table thead tr th {
-    position: sticky;
     position: -webkit-sticky;
+    position: sticky;
     top: 0;
     z-index: 1000;
     background-color: rgb(252.5, 230.5, 191.5);

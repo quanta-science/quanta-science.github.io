@@ -9,6 +9,21 @@ view: "topic"
 published: true
 sitemap: true
 ---
+<style>
+    tr > :first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        z-index: 500;
+    }
+    thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+</style>
+
 <p>В физике для каждой физической величины вводится свое обозначение, чаще всего в виде одной английской 
 буквы.</p>
 <p>На нижеследующем рисунке представлена система СИ и взаимосвязи между единицами физических величин.</p>
@@ -285,73 +300,84 @@ style="opacity:0.63;mix-blend-mode:normal;fill:url(#radialGradient3153);fill-opa
 
 <p>Значение физических величин всегда выражается в каких-либо единицах измерения. Так время может выражаться в часах, минутах, годах, а температура – в градусах Цельсия, кельвинах, градусах Фаренгейта.</p>
 <p>В таблицах ниже представлены единицы физических величин, их обозначения, наименования и размерности.</p>
-<h3>Основные единицы СИ</h3>
-<div class="formulae">
-<table>
-<tr><td>Величина</td><td>Размерность</td><td>Единица</td><td>Русское обозначение</td>
-<td>Международное обозначение</td></tr>
-<tr><td>Длина</td><td>L</td><td>метр</td><td>м</td><td>m</td></tr>
-<tr><td>Масса</td><td>M</td><td>килограмм</td><td>кг</td><td>kg</td></tr>
-<tr><td>Время</td><td>T</td><td>секунда</td><td>с</td><td>s</td></tr>
-<tr><td>Сила тока *</td><td>I</td><td>ампер</td><td>А</td><td>A</td></tr>
-<tr><td>Температура **</td><td>Θ</td><td>кельвин</td><td>К</td><td>K</td></tr>
-<tr><td>Количество вещества</td><td>N</td><td>моль</td><td>моль</td><td>mol</td></tr>
-<tr><td>Сила света</td><td>J</td><td>кандела</td><td>кд</td><td>cd</td></tr>
-</table>
-<br>* Сила электрического тока
-<br>** Термодинамическая температура
-</div>
 
-<h3>Производные единицы, имеющие специальные наименования и обозначения</h3>
-<div class="formulae">
 <table>
-<tr><td>Величина</td><td>Выражение через основные единицы</td><td>Единица</td><td>Русское обозначение</td>
-<td>Международное обозначение</td></tr>
-<tr><td>Плоский угол</td><td>м·м<sup>−1</sup> = 1</td><td>радиан</td><td>рад</td><td>rad</td></tr>
-<tr><td>Телесный угол</td><td>м<sup>2</sup>·м<sup>−2</sup> = 1</td><td>стерадиан</td><td>ср</td><td>sr</td></tr>
-<tr><td>Температура Цельсия</td><td>К</td><td>градус Цельсия</td><td>°C</td><td>°C</td></tr>
-<tr><td>Частота</td><td>с<sup>−1</sup></td><td>герц</td><td>Гц</td><td>Hz</td></tr>
-<tr><td>Сила</td><td>кг·м·c<sup>−2</sup></td><td>ньютон</td><td>Н</td><td>N</td></tr>
-<tr><td>Энергия</td><td>Н·м = кг·м<sup>2</sup>·c<sup>−2</sup></td><td>джоуль</td><td>Дж</td><td>J</td></tr>
-<tr><td>Мощность</td><td>Дж/с = кг·м<sup>2</sup>·c<sup>−3</sup></td><td>ватт</td><td>Вт</td><td>W</td></tr>
-<tr><td>Давление</td><td>Н/м<sup>2</sup> = кг·м<sup>−1</sup>·с<sup>−2</sup></td><td>паскаль</td><td>Па</td><td>Pa</td></tr>
-<tr><td>Световой поток</td><td>кд·ср</td><td>люмен</td><td>лм</td><td>lm</td></tr>
-<tr><td>Освещённость</td><td>лм/м² = кд·ср/м²</td><td>люкс</td><td>лк</td><td>lx</td></tr>
-<tr><td>Электрический заряд</td><td>А·с</td><td>кулон</td><td>Кл</td><td>C</td></tr>
-<tr><td>Разность потенциалов</td><td>Дж/Кл = кг·м<sup>2</sup>·с<sup>−3</sup>·А<sup>−1</sup></td><td>вольт</td><td>В</td><td>V</td></tr>
-<tr><td>Сопротивление</td><td>В/А = кг·м<sup>2</sup>·с<sup>−3</sup>·А<sup>−2</sup></td><td>ом</td><td>Ом</td><td>Ω</td></tr>
-<tr><td>Электроёмкость</td><td>Кл/В = с<sup>4</sup>·А<sup>2</sup>·кг<sup>−1</sup>·м<sup>−2</sup></td><td>фарад</td><td>Ф</td><td>F</td></tr>
-<tr><td>Магнитный поток</td><td>кг·м<sup>2</sup>·с<sup>−2</sup>·А<sup>−1</sup></td><td>вебер</td><td>Вб</td><td>Wb</td></tr>
-<tr><td>Магнитная индукция</td><td>Вб/м<sup>2</sup> = кг·с<sup>−2</sup>·А<sup>−1</sup></td><td>тесла</td><td>Тл</td><td>T</td></tr>
-<tr><td>Индуктивность</td><td>кг·м<sup>2</sup>·с<sup>−2</sup>·А<sup>−2</sup></td><td>генри</td><td>Гн</td><td>H</td></tr>
-<tr><td>Электрическая проводимость</td><td>Ом<sup>−1</sup> = с<sup>3</sup>·А<sup>2</sup>·кг<sup>−1</sup>·м<sup>−2</sup></td><td>сименс</td><td>См</td><td>S</td></tr>
-<tr><td> Активность РИ*</td><td>с<sup>−1</sup></td><td>беккерель</td><td>Бк</td><td>Bq</td></tr>
-<tr><td>Поглощённая ДИИ**, керма</td><td>Дж/кг = м²/c²</td><td>грей</td><td>Гр</td><td>Gy</td></tr>
-<tr><td>Эквивалент ДИИ**</td><td>Дж/кг = м²/c²</td><td>зиверт</td><td>Зв</td><td>Sv</td></tr>
-<tr><td>Активность катализатора</td><td>моль/с</td><td>катал</td><td>кат</td><td>kat</td></tr>
-</table></div>
-<br>* РИ - Радиоактивный источник
-<br>** ДИИ - Доза ионизирующего излучения
-</div>
-
-<h3>Единицы, не входящие в СИ</h3>
-<div class="formulae">
-<table><tr><td>Величина</td><td>Величина в единицах СИ</td><td>Единица</td><td>Русское обозначение</td>
-<td>Международное обозначение</td></tr>
-<tr><td>Время</td><td>60 с</td><td>минута</td><td>мин</td><td>min</td></tr>
-<tr><td>Время</td><td>60 мин = 3600 с</td><td>час</td><td>ч</td><td>h</td></tr>
-<tr><td>Время</td><td>24 ч = 86 400 с</td><td>сутки</td><td>сут</td><td>d</td></tr>
-<tr><td>Плоский угол</td><td>(π/180) рад</td><td>угловой градус</td><td>°</td><td>°</td></tr>
-<tr><td>Плоский угол</td><td>(1/60)° = (π/10 800) рад</td><td>угловая минута</td><td>′</td><td>′</td></tr>
-<tr><td>Плоский угол</td><td>(1/60)′ = (π/648 000) рад</td><td>угловая секунда</td><td>″</td><td>″</td></tr>
-<tr><td>Объем</td><td>0,001 м<sup>3</sup></td><td>литр</td><td>л</td><td>l, L</td></tr>
-<tr><td>Масса</td><td>1000 кг</td><td>тонна</td><td>т</td><td>t</td></tr>
-<tr><td>Отношение величин</td><td>безразмерна</td><td>непер</td><td>Нп</td><td>Np</td></tr>
-<tr><td>Отношение величин</td><td>безразмерна</td><td>бел</td><td>Б</td><td>B</td></tr>
-<tr><td>Энергия</td><td>1,602 176 634⋅10<sup>−19</sup> Дж</td><td>электронвольт</td><td>эВ</td><td>eV</td></tr>
-<tr><td>Масса</td><td>≈1,660 539 0⋅10<sup>−27</sup> кг</td><td>а.е.м. *, дальтон</td><td>а.&nbsp;е.&nbsp;м.</td><td>u, Da</td></tr>
-<tr><td>Длина</td><td><span>149&nbsp;597&nbsp;870&nbsp;700 м</span></td><td>астрономическая единица</td><td>а.&nbsp;е.</td><td>au</td></tr>
-<tr><td>Площадь</td><td>10000 м<sup>2</sup></td><td>гектар</td><td>га</td><td>ha</td></tr>
+    <caption><h3>Основные единицы СИ</h3></caption>
+    <thead>
+        <tr><th>Величина</th><th>Размерность</th>
+            <th>Единица</th><th>Русское обозначение</th><th>Международное обозначение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Длина</td><td>L</td><td>метр</td><td>м</td><td>m</td></tr>
+        <tr><td>Масса</td><td>M</td><td>килограмм</td><td>кг</td><td>kg</td></tr>
+        <tr><td>Время</td><td>T</td><td>секунда</td><td>с</td><td>s</td></tr>
+        <tr><td>Сила тока *</td><td>I</td><td>ампер</td><td>А</td><td>A</td></tr>
+        <tr><td>Температура **</td><td>Θ</td><td>кельвин</td><td>К</td><td>K</td></tr>
+        <tr><td>Количество вещества</td><td>N</td><td>моль</td><td>моль</td><td>mol</td></tr>
+        <tr><td>Сила света</td><td>J</td><td>кандела</td><td>кд</td><td>cd</td></tr>
+    </tbody>
 </table>
-<br>* а.е.м – атомная единица массы
-</div>
+<p>* Сила электрического тока<br>
+** Термодинамическая температура</p>
+
+<table>
+    <caption><h3>Производные единицы, имеющие специальные наименования и обозначения</h3></caption>
+    <thead>
+        <tr><th>Величина</th><th>Выражение через основные единицы</th>
+            <th>Единица</th><th>Русское обозначение</th><th>Международное обозначение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Плоский угол</td><td>м·м<sup>−1</sup> = 1</td><td>радиан</td><td>рад</td><td>rad</td></tr>
+        <tr><td>Телесный угол</td><td>м<sup>2</sup>·м<sup>−2</sup> = 1</td><td>стерадиан</td><td>ср</td><td>sr</td></tr>
+        <tr><td>Температура Цельсия</td><td>К</td><td>градус Цельсия</td><td>°C</td><td>°C</td></tr>
+        <tr><td>Частота</td><td>с<sup>−1</sup></td><td>герц</td><td>Гц</td><td>Hz</td></tr>
+        <tr><td>Сила</td><td>кг·м·c<sup>−2</sup></td><td>ньютон</td><td>Н</td><td>N</td></tr>
+        <tr><td>Энергия</td><td>Н·м = кг·м<sup>2</sup>·c<sup>−2</sup></td><td>джоуль</td><td>Дж</td><td>J</td></tr>
+        <tr><td>Мощность</td><td>Дж/с = кг·м<sup>2</sup>·c<sup>−3</sup></td><td>ватт</td><td>Вт</td><td>W</td></tr>
+        <tr><td>Давление</td><td>Н/м<sup>2</sup> = кг·м<sup>−1</sup>·с<sup>−2</sup></td><td>паскаль</td><td>Па</td><td>Pa</td></tr>
+        <tr><td>Световой поток</td><td>кд·ср</td><td>люмен</td><td>лм</td><td>lm</td></tr>
+        <tr><td>Освещённость</td><td>лм/м² = кд·ср/м²</td><td>люкс</td><td>лк</td><td>lx</td></tr>
+        <tr><td>Электрический заряд</td><td>А·с</td><td>кулон</td><td>Кл</td><td>C</td></tr>
+        <tr><td>Разность потенциалов</td><td>Дж/Кл = кг·м<sup>2</sup>·с<sup>−3</sup>·А<sup>−1</sup></td><td>вольт</td><td>В</td><td>V</td></tr>
+        <tr><td>Сопротивление</td><td>В/А = кг·м<sup>2</sup>·с<sup>−3</sup>·А<sup>−2</sup></td><td>ом</td><td>Ом</td><td>Ω</td></tr>
+        <tr><td>Электроёмкость</td><td>Кл/В = с<sup>4</sup>·А<sup>2</sup>·кг<sup>−1</sup>·м<sup>−2</sup></td><td>фарад</td><td>Ф</td><td>F</td></tr>
+        <tr><td>Магнитный поток</td><td>кг·м<sup>2</sup>·с<sup>−2</sup>·А<sup>−1</sup></td><td>вебер</td><td>Вб</td><td>Wb</td></tr>
+        <tr><td>Магнитная индукция</td><td>Вб/м<sup>2</sup> = кг·с<sup>−2</sup>·А<sup>−1</sup></td><td>тесла</td><td>Тл</td><td>T</td></tr>
+        <tr><td>Индуктивность</td><td>кг·м<sup>2</sup>·с<sup>−2</sup>·А<sup>−2</sup></td><td>генри</td><td>Гн</td><td>H</td></tr>
+        <tr><td>Электрическая проводимость</td><td>Ом<sup>−1</sup> = с<sup>3</sup>·А<sup>2</sup>·кг<sup>−1</sup>·м<sup>−2</sup></td><td>сименс</td><td>См</td><td>S</td></tr>
+        <tr><td> Активность РИ*</td><td>с<sup>−1</sup></td><td>беккерель</td><td>Бк</td><td>Bq</td></tr>
+        <tr><td>Поглощённая ДИИ**, керма</td><td>Дж/кг = м²/c²</td><td>грей</td><td>Гр</td><td>Gy</td></tr>
+        <tr><td>Эквивалент ДИИ**</td><td>Дж/кг = м²/c²</td><td>зиверт</td><td>Зв</td><td>Sv</td></tr>
+        <tr><td>Активность катализатора</td><td>моль/с</td><td>катал</td><td>кат</td><td>kat</td></tr>
+    </tbody>
+</table>
+<p>* РИ - Радиоактивный источник<br>
+** ДИИ - Доза ионизирующего излучения</p>
+
+<table>
+    <caption><h3>Единицы, не входящие в СИ</h3></caption>
+    <thead>
+        <tr><th>Величина</th><th>Величина в единицах СИ</th>
+            <th>Единица</th><th>Русское обозначение</th><th>Международное обозначение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Время</td><td>60 с</td><td>минута</td><td>мин</td><td>min</td></tr>
+        <tr><td>Время</td><td>60 мин = 3600 с</td><td>час</td><td>ч</td><td>h</td></tr>
+        <tr><td>Время</td><td>24 ч = 86 400 с</td><td>сутки</td><td>сут</td><td>d</td></tr>
+        <tr><td>Плоский угол</td><td>(π/180) рад</td><td>угловой градус</td><td>°</td><td>°</td></tr>
+        <tr><td>Плоский угол</td><td>(1/60)° = (π/10 800) рад</td><td>угловая минута</td><td>′</td><td>′</td></tr>
+        <tr><td>Плоский угол</td><td>(1/60)′ = (π/648 000) рад</td><td>угловая секунда</td><td>″</td><td>″</td></tr>
+        <tr><td>Объем</td><td>0,001 м<sup>3</sup></td><td>литр</td><td>л</td><td>l, L</td></tr>
+        <tr><td>Масса</td><td>1000 кг</td><td>тонна</td><td>т</td><td>t</td></tr>
+        <tr><td>Отношение величин</td><td>безразмерна</td><td>непер</td><td>Нп</td><td>Np</td></tr>
+        <tr><td>Отношение величин</td><td>безразмерна</td><td>бел</td><td>Б</td><td>B</td></tr>
+        <tr><td>Энергия</td><td>1,602 176 634⋅10<sup>−19</sup> Дж</td><td>электронвольт</td><td>эВ</td><td>eV</td></tr>
+        <tr><td>Масса</td><td>≈1,660 539 0⋅10<sup>−27</sup> кг</td><td>а.е.м. *, дальтон</td><td>а.&nbsp;е.&nbsp;м.</td><td>u, Da</td></tr>
+        <tr><td>Длина</td><td><span>149&nbsp;597&nbsp;870&nbsp;700 м</span></td><td>астрономическая единица</td><td>а.&nbsp;е.</td><td>au</td></tr>
+        <tr><td>Площадь</td><td>10000 м<sup>2</sup></td><td>гектар</td><td>га</td><td>ha</td></tr>
+    </tbody>
+</table>
+<p>* а.е.м – атомная единица массы</p>

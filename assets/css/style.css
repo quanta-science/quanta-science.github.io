@@ -129,6 +129,10 @@ lite-youtube {
     z-index: 500;
     background-color: rgb(252.5, 230.5, 191.5);
 }
+.sticky_table {
+    overflow: auto;
+    max-height: 70vh;
+}
 .sticky_table thead, .sticky_table thead tr th {
     position: -webkit-sticky;
     position: sticky;
@@ -144,10 +148,7 @@ lite-youtube {
     z-index: 1500;
     background-color: rgb(252.5, 230.5, 191.5);
 }
-.sticky_table table {
-    overflow: auto;
-    max-height: 70vh;
-}
+
 .soluble {background: rgb(138, 213, 126);}
 .slightly {background: rgb(255, 254, 152);}
 .insoluble {background: rgb(215, 109, 109);}

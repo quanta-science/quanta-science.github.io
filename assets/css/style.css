@@ -90,13 +90,14 @@ margin-right: 0;
 }
 
 .formulae {
-    overflow: auto;
+    overflow:auto;
+    height:50%;
 }
 /* чтобы все квизы были вертикальными */
 lite-youtube {
-    max-width: 360px;
-    aspect-ratio: 9 / 16;
-    margin: 0 auto;
+    max-width:360px;
+    aspect-ratio:9/16;
+    margin:0 auto;
 }
 .correct {
     background-color: #d4edda;

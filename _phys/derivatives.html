@@ -1,0 +1,107 @@
+---
+layout: default
+title: "Производные и первообразные (интегралы)"
+description: "Производные и первообразные (интегралы)."
+order: 13
+math: true
+view: "topic"
+published: true
+sitemap: true
+---
+
+<style>
+td {text-align: center;}
+</style>
+
+<div class="formulae">
+<table>
+<caption>Таблица производных и первообразных некоторых функций<br>(\(a\) и \(b\) – постоянные)</caption>
+<tr>
+<td>Первообразная \(F\left(x\right)\)</td>
+<td>Функция \(f\left(x\right)\)</td>
+<td>Производная \(f'\left(x\right)\)</td></tr>
+<tr>
+<td>\(ax\)</td>
+<td>\(a\)</td>
+<td>\(0\)</td></tr>
+<tr>
+<td>\(\frac{x^{p+1}}{p+1},\; p\neq -1\)</td>
+<td>\(x^{p}, \; p \in \mathbb{R}\)</td>
+<td>\(px^{p-1}\)</td></tr>
+<tr>
+<td>\( \frac{a^{x}}{\ln a}\)</td>
+<td>\( a^{x}\)</td>
+<td>\( a^{x} \ln a\)</td></tr>
+<tr>
+<td>\( e^{x}\)</td>
+<td>\( e^{x}\)</td>
+<td>\( e^{x}\)</td></tr>
+<tr>
+<td>\( x\ln x-x\)</td>
+<td>\( \ln x\)</td>
+<td>\( \frac{1}{x}\)</td></tr>
+<tr>
+<td>\( x\log _{a} \frac{x}{e}\)</td>
+<td>\( \log _{a}x\)</td>
+<td>\( \frac{1}{x\ln a}\)</td></tr>
+<tr>
+<td>\( \ln \left| x \right|\)</td>
+<td>\( \frac{1}{x}\)</td>
+<td>\( -\frac{1}{x^{2}}\)</td></tr>
+<tr>
+<td>\( -\cos x\)</td>
+<td>\( \sin x\)</td>
+<td>\( \cos x\)</td></tr>
+<tr>
+<td>\( \sin x\)</td>
+<td>\( \cos x\)</td>
+<td>\( -\sin x\)</td></tr>
+<tr>
+<td>\( -\ln \left| \cos x \right|\)</td>
+<td>\( \tan x\)</td>
+<td>\( \frac{1}{\cos^{2}x}\)</td></tr>
+<tr>
+<td>\( \ln \left| \sin x\right|\)</td>
+<td>\( \cot x\)</td>
+<td>\( -\frac{1}{\sin ^{2}x}\)</td></tr>
+<tr>
+<td>\( \frac{1}{a}F\left(u\right)=\frac{1}{a}F\left(ax+b\right),\)
+\( a\neq 0\)</td>
+<td>\( f\left(u\right)=f\left(ax+b\right)\)</td>
+<td>\( af'\left(u\right)=af'\left(ax+b\right)\)</td></tr>
+</table>
+</div><br>
+<p>1. Правила дифференцирования (\(u, v\) – функции; \(c\) – постоянная):</p>
+<div class="formulae">
+\[ \left(cu\right)'=cu';\\
+\left(u+v\right)'=u'+v';\\
+\left(uv\right)'=u'v+uv';\\
+\left(\frac{u}{v}\right)'=\frac{u'v+uv'}{v^{2}};\]
+<p style="text-align: center;">\( \left( g \left( f \left( x \right) \right) \right)'=g' 
+    \left( f \left( x \right) \right) f' \left( x \right)\), где: \(g \left( f \left( x \right) 
+    \right)\) – сложная функция.</p>
+</div>
+<p>2. Уравнение касательной к графику функции \(y=f(x)\) записывается в виде:
+<div class="formulae">
+\[y-y_{0}=f'\left(x_{0}\right)\left(x-x_{0}\right),\]
+</div>
+где: \((x_{0}; y_{0})\) – точка касания.
+</p>
+<p>3. Правила нахождения первообразных:
+    <ul>
+        <li>если \(F\) – первообразная для \(f\), а \(G\) – первообразная для \(g\), то \(F+G\) 
+        есть первообразная для \(f+g\);</li>
+        <li>если \(F\) – первообразная для \(f\), а \(k\) – постоянная, то \(kF\) – есть 
+        первообразная для \(kf\);</li>
+        <li>если \(F(x)\) – первообразная для \(f(x)\), а \(k≠0\) и \(b\) – постоянные, то \(\frac{1}
+        {k}F\left( kx+b \right)\) есть первообразная для функции \(f\left( kx+b \right)\).</li>
+    </ul>
+</p>
+<p>4. Формула Ньютона-Лейбница имеет вид:
+<div class="formulae">\[\int \limits_a^b f\left(x\right)dx= F\left(b\right)-F\left(a\right).\]</div>
+</p>
+<p>5. Площадь криволинейной трапеции, ограниченной осью \(Ox\), прямыми \(x=a\) и \(x=b\) и графиком неотрицательной функции \(y=f(x)\) на отрезке \([a, b]\), находится по формуле:
+<div class="formulae">
+\[S=\int \limits_a^b f\left(x\right)dx.\]
+</div>
+</p>

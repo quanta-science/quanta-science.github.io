@@ -123,14 +123,13 @@ lite-youtube {
     padding-bottom: 20px;
 }
 
-.sticky_table tr td:first-child, .sticky_table thead tr th:first-child {
+.sticky_table tr td:first-child {
     position: -webkit-sticky;
     position: sticky;
     left: 0;
     z-index: 500;
     background-color: rgb(252.5, 230.5, 191.5);
 }
-
 .sticky_table thead, .sticky_table thead tr th {
     position: -webkit-sticky;
     position: sticky;
@@ -138,7 +137,14 @@ lite-youtube {
     z-index: 1000;
     background-color: rgb(252.5, 230.5, 191.5);
 }
-
+.sticky_table thead tr th:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1500;
+    background-color: rgb(252.5, 230.5, 191.5);
+}
 .soluble {background: rgb(138, 213, 126);}
 .slightly {background: rgb(255, 254, 152);}
 .insoluble {background: rgb(215, 109, 109);}

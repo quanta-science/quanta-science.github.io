@@ -1,0 +1,89 @@
+---
+layout: default
+title: Указания по решению показательных и логарифмических уравнений""
+description: "Указания по решению показательных и логарифмических уравнений."
+order: 16
+math: true
+view: "topic"
+published: true
+sitemap: true
+---
+
+<h2>Показательное уравнение</h2>
+<p>Это показательное уравнение:</p>
+<div class="formulae">
+\[a^{f\left(x\right)}=b^{g\left(x\right)} \; \left( a>0,\: a\neq 1,\: b>0,\: b\neq 1 \right)\]
+</div>
+<p>равносильно уравнению:</p>
+<div class="formulae">
+\[f\left(x\right) \log_{c} a=g \left( x \right) \log_{c} b,\]
+</div>
+<p>которое получается логарифмированием первого уравнения по какому-либо основанию 
+\(c>0, c≠1\).</p>
+<p>В частности, уравнение \(a^{f\left(x\right)}=a^{g\left(x\right)}\) равносильно уравнению 
+\( f\left(x\right)=g\left(x\right)\).</p>
+<p>Корнями уравнения:</p>
+<div class="formulae">
+\[\left(u\left(x\right)\right)^{f\left(x\right)}=\left(u\left(x\right)\right)^{g\left(x\right)}\]
+</div>
+<p>считаются только решения смешанной системы:</p>
+<div class="formulae">
+\[\begin{cases} u \left( x\right)>0, \\ u \left( x\right)\neq 1, \\ f \left( x\right)=
+g\left( x\right) \end{cases}\]
+</div>
+<p>и те значения \(x\), для которых \(u(x)=1\), если при этих значениях определены 
+\(f(x)\) и \(g(x)\). Функция вида \((u(x))^{f(x)}\) определена только при \(u(x)>0\), 
+поэтому те значения \(x\), которые формально удовлетворяют равенству \(\left(u\left(x\right)
+\right)^{f\left(x\right)}=\left(u\left(x\right)\right)^{g\left(x\right)}\), но при которых 
+\(u(x)≤0\), не принято считать его корнями.</p>
+
+<h2>Логарифмическое уравнение</h2>
+<p>Это логарифмическое уравнение:
+<div class="formulae">
+\[\log _{a} f\left( x\right)=b\]
+</div>
+<p>равносильно уравнению:</p>
+<div class="formulae">
+\[f\left( x\right)=a^{b}.\]
+</div>
+<p>А это логарифмическое уравнение:</p>
+<div class="formulae">
+\[\log _{a} f\left( x\right)=\log _{a} g\left( x\right) \; \left( a>0, \: a\neq 1\right)\]
+</div>
+<p>равносильно каждой из следующих систем:</p>
+<div class="formulae">
+\[\begin{cases} f\left( x\right)>0,\\ f\left( x\right)=g\left( x\right) \end{cases}\]
+<p>или</p>
+\[\begin{cases} g\left( x\right)>0,\\ f\left( x\right)=g\left( x\right). \end{cases}\]
+</div>
+<p>Для решения этого уравнения переходят только к одной из этих систем (той, которая проще) либо 
+решают уравнение \(f(x)=g(x)\), которое может иметь корни, посторонние для исходного уравнения, 
+и проверяют каждый из них подстановкой в исходное уравнение.</p>
+<p>Для решения уравнений:</p>
+<div class="formulae">
+\[\log _{a} f\left( x\right)+\log _{a} g\left( x\right)=\log _{a} u\left( x\right),\]
+\[\log _{a} f\left( x\right)-\log _{a} g\left( x\right)=\log _{a} u\left( x\right),\]
+\[p\log _{a} f\left( x\right)=\log _{a} u\left( x\right),\]
+</div>
+<p>их приводят соответственно к виду:</p>
+<div class="formulae">
+\[\log _{a} \left( f\left( x\right) \cdot g\left( x\right) \right)=\log _{a} u\left( x\right),\]
+\[\log _{a} \frac{f\left( x\right)}{g\left( x\right)}=\log _{a} u\left( x\right),\]
+\[\log _{a} \left(f\left( x\right) \right)^{p}=\log _{a} u\left( x\right)\]
+</div>
+<p>и далее решают так, как указано выше.</p>
+<p>Из найденных корней следует включить в ответ те, для которых \(f(x)>0, g(x)>0, u(x)>0\), 
+либо проверить каждый из них подстановкой в исходное уравнение.</p>
+<p>Если при решении уравнения производятся преобразования вида 
+\(\log _{a} \left( f\left( x\right) \cdot g\left( x\right) \right),\;
+\log _{a} \frac{f\left( x\right)}{g\left( x\right)},\;
+\log _{a} \left(f\left( x\right) \right)^{p},\) \(p\) – четное число, то возникает 
+опасность потери корней заданного уравнения. Чтобы предотвратить возможную потерю 
+корней, надо пользоваться указанными формулами в таком виде:</p>
+<div class="formulae">
+\[\log _{a} \left( f\left( x\right) \cdot g\left( x\right) \right)=
+\log _{a} \left| f\left( x\right)\right|+\log _{a} \left| g\left( x\right)\right|,\]
+\[\log _{a} \frac{f\left( x\right)}{g\left( x\right)}=
+\log _{a} \left| f\left( x\right)\right|-\log _{a} \left| g\left( x\right)\right|,\]
+\[\log _{a} \left(f\left( x\right) \right)^{p}=p\log _{a} \left|f\left( x\right)\right|.\]
+</div>

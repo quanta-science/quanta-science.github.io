@@ -1,0 +1,260 @@
+---
+layout: default
+title: "Электронные конфигурации атомов химических элементов"
+description: "Электронные конфигурации атомов химических элементов."
+order: 2
+math: true
+view: "topic"
+published: true
+sitemap: true
+---
+<style>
+    :root {
+        --alkali-metal: #ff6666;
+        --alkaline-earth-metal: #ffdead;
+        --transition-metal: #ffc0cb;
+        --metalloid: #cccc99;
+        --nonmetal: #a0f0a0;
+        --noble-gas: #c0ffff;
+        --lanthanide: #ffbfff;
+        --actinide: #ff99ff;
+        --post-transition-metal: #cccccc;
+        --unknown: #666666;
+    }
+
+    /* Сетка таблицы: 19 столбцов (1 для номеров периодов + 18 групп) */
+    .periodic-table {
+        display: grid;
+        grid-template-columns: 2.5rem repeat(18, minmax(4rem, 1fr));
+        gap: 0.5rem;
+        max-width: 87.5rem;
+        margin: 0 auto;
+        overflow-x: auto;
+    }
+
+    /* Шапки групп и периодов */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #444;
+        border-radius: 0.25rem;
+    }
+
+    /* Ячейка элемента */
+    .element-cell {
+        border: 1px solid #444;
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        user-select: none;
+        aspect-ratio: 1 / 1;
+        min-height: 4rem;
+    }
+
+    .element-cell:hover {
+        transform: scale(1.08);
+        border: 2px solid #444;
+        box-shadow: 0 0 0.625rem #555;
+        z-index: 10;
+    }
+
+    .elem-num {
+        font-size: 0.75rem;
+        font-weight: bold;
+        opacity: 0.9;
+    }
+
+    .elem-symbol {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.1;
+    }
+
+    .elem-name {
+        font-size: 0.7rem;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .elem-mass {
+        font-size: 0.65rem;
+        text-align: center;
+        opacity: 0.8;
+    }
+
+        /* Стилизация категорий по классам */
+        .alkali-metal { background-color: var(--alkali-metal); color: #000; }
+        .alkaline-earth-metal { background-color: var(--alkaline-earth-metal); color: #000; }
+        .transition-metal { background-color: var(--transition-metal); color: #000; }
+        .metalloid { background-color: var(--metalloid); color: #000; }
+        .diatomic-nonmetal, .polyatomic-nonmetal { background-color: var(--nonmetal); color: #000; }
+        .noble-gas { background-color: var(--noble-gas); color: #000; }
+        .lanthanide { background-color: var(--lanthanide); color: #000; }
+        .actinide { background-color: var(--actinide); color: #000; }
+        .post-transition-metal { background-color: var(--post-transition-metal); color: #000; }
+        .unknown { background-color: var(--unknown); color: #fff; }
+
+        /* Модальное окно */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            border: 2px solid #555;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 31.25rem;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 1.25rem;
+            position: relative;
+            box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .close-btn:hover { color: #ff6666; }
+
+        .modal-properties {
+            margin-top: 0.5rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            line-height: 1.1;
+            font-size: 0.7rem;
+        }
+</style>
+<p>Электронные конфигурации атомов химических элементов.</p>
+<div class="formulae">
+    <div class="periodic-table" id="periodicTable"></div>
+</div>
+<p></p>
+
+<script>
+        const jsonUrl = 'https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json';
+        
+        // Функция для сопоставления категорий из JSON с CSS классами цветов
+        function getCategoryClass(category) {
+            const cat = category.toLowerCase();
+            if (cat.includes('alkali metal')) return 'alkali-metal';
+            if (cat.includes('alkaline earth metal')) return 'alkaline-earth-metal';
+            if (cat.includes('transition metal')) return 'transition-metal';
+            if (cat.includes('metalloid')) return 'metalloid';
+            if (cat.includes('noble gas')) return 'noble-gas';
+            if (cat.includes('diatomic nonmetal')) return 'diatomic-nonmetal';
+            if (cat.includes('polyatomic nonmetal')) return 'polyatomic-nonmetal';
+            if (cat.includes('lanthanide')) return 'lanthanide';
+            if (cat.includes('actinide')) return 'actinide';
+            if (cat.includes('post-transition metal')) return 'post-transition-metal';
+            return 'unknown';
+        }
+
+        async function initTable() {
+            try {
+                const response = await fetch(jsonUrl);
+                const data = await response.json();
+                const container = document.getElementById('periodicTable');
+
+                // 1. Создаем верхнюю левую пустую ячейку (пересечение шапок)
+                const emptyCorner = document.createElement('div');
+                container.appendChild(emptyCorner);
+
+                // 2. Генерируем горизонтальную шапку групп (1-18)
+                for (let g = 1; g <= 18; g++) {
+                    const groupHeader = document.createElement('div');
+                    groupHeader.className = 'header group-header';
+                    groupHeader.innerText = g;
+                    container.appendChild(groupHeader);
+                }
+
+                // Массив для отслеживания созданных номеров периодов (боковая шапка)
+                // Всего в CSS Grid у нас будет максимум 10 строк периодов (7 основных + лантаноиды/актиноиды)
+                const totalRows = 10;
+                const periodHeadersGenerated = {};
+
+                // Функция отрисовки боковой шапки периода, если она еще не отрисована для текущей строки ypos
+                function checkAndRenderPeriodHeader(ypos) {
+                    if (!periodHeadersGenerated[ypos]) {
+                        const periodHeader = document.createElement('div');
+                        periodHeader.className = 'header period-header';
+                        // Для лантаноидов (ypos=9) и актиноидов (ypos=10) выводим знак '*', либо их реальные периоды (6 и 7)
+                        if (ypos === 9) periodHeader.innerText = '6*';
+                        else if (ypos === 10) periodHeader.innerText = '7*';
+                        else periodHeader.innerText = ypos;
+                        
+                        // Явное позиционирование в Grid: колонка 1, строка ypos + 1 (так как строка 1 — это шапка групп)
+                        periodHeader.style.gridColumn = 1;
+                        periodHeader.style.gridRow = ypos + 1;
+                        container.appendChild(periodHeader);
+                        periodHeadersGenerated[ypos] = true;
+                    }
+                }
+
+                // 3. Рендерим элементы
+                data.elements.forEach(element => {
+                    // Проверяем и рисуем боковой маркер периода для текущего элемента
+                    checkAndRenderPeriodHeader(element.ypos);
+
+                    // Создаем ячейку элемента
+                    const cell = document.createElement('div');
+                    cell.className = `element-cell ${getCategoryClass(element.category)}`;
+                    
+                    // Позиционируем элемент по координатам из JSON (+1 сдвиг из-за шапок)
+                    cell.style.gridColumn = element.xpos + 1;
+                    cell.style.gridRow = element.ypos + 1;
+
+                    // Наполнение ячейки
+                    cell.innerHTML = `
+                        <div class="elem-num">${element.number}</div>
+                        <div class="elem-symbol">${element.symbol}</div>
+                        <div class="elem-symbol">${element.electron_configuration}</div>
+                        <div class="elem-symbol">${element.electron_configuration_semantic}</div>
+                    `;
+
+                    // Вешаем событие клика для открытия модального окна
+                    cell.addEventListener('click', () => showModal(element));
+                    container.appendChild(cell);
+                });
+
+            } catch (error) {
+                console.error('Ошибка загрузки или парсинга JSON:', error);
+                document.getElementById('periodicTable').innerText = 'Не удалось загрузить данные таблицы.';
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        window.addEventListener('DOMContentLoaded', initTable);
+</script>

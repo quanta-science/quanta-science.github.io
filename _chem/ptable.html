@@ -325,10 +325,11 @@ sitemap: true
                     cell.style.gridRow = element.ypos + 1;
 
                     // Наполнение ячейки
+                    // <div class="elem-name">${element.name}</div>
                     cell.innerHTML = `
                         <div class="elem-num">${element.number}</div>
                         <div class="elem-symbol">${element.symbol}</div>
-                        <div class="elem-name">${element.name}</div>
+                        <div class="elem-name">${translations.names[element.symbol] || element.name}</div>
                         <div class="elem-mass">${parseFloat(element.atomic_mass).toFixed(3)}</div>
                     `;
 

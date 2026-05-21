@@ -97,29 +97,17 @@ sitemap: true
         opacity: 0.8;
     }
 
-        /* Стилизация категорий по классам */
-        .alkali-metal { background-color: var(--alkali-metal); color: #000; }
-        .alkaline-earth-metal { background-color: var(--alkaline-earth-metal); color: #000; }
-        .transition-metal { background-color: var(--transition-metal); color: #000; }
-        .metalloid { background-color: var(--metalloid); color: #000; }
-        .diatomic-nonmetal, .polyatomic-nonmetal { background-color: var(--nonmetal); color: #000; }
-        .noble-gas { background-color: var(--noble-gas); color: #000; }
-        .lanthanide { background-color: var(--lanthanide); color: #000; }
-        .actinide { background-color: var(--actinide); color: #000; }
-        .post-transition-metal { background-color: var(--post-transition-metal); color: #000; }
-        .unknown { background-color: var(--unknown); color: #fff; }
-
-        .legend {
-            width: fit-content;
-            border: 3px solid #444;
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+    /* Стилизация категорий по классам */
+    .alkali-metal { background-color: var(--alkali-metal); color: #000; }
+    .alkaline-earth-metal { background-color: var(--alkaline-earth-metal); color: #000; }
+    .transition-metal { background-color: var(--transition-metal); color: #000; }
+    .metalloid { background-color: var(--metalloid); color: #000; }
+    .diatomic-nonmetal, .polyatomic-nonmetal { background-color: var(--nonmetal); color: #000; }
+    .noble-gas { background-color: var(--noble-gas); color: #000; }
+    .lanthanide { background-color: var(--lanthanide); color: #000; }
+    .actinide { background-color: var(--actinide); color: #000; }
+    .post-transition-metal { background-color: var(--post-transition-metal); color: #000; }
+    .unknown { background-color: var(--unknown); color: #fff; }
 </style>
 <p>Электроотрицательность – это свойство атома оттягивать общие электроны в ковалентной 
 связи. Чем сильнее элемент притягивает общие электроны, тем выше значение 
@@ -422,7 +410,7 @@ Cl^{\delta-}\)</p>
                     // Вешаем событие клика для открытия модального окна
                     cell.addEventListener('click', () => showModal(element));
                     container.appendChild(cell);
-                    
+
                 });
 
             } catch (error) {

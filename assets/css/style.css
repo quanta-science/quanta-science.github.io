@@ -149,6 +149,19 @@ lite-youtube {
     background-color: rgb(252.5, 230.5, 191.5);
 }
 
+.legend {
+    width: fit-content;
+    border: 2px solid #444;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
 .soluble {background: rgb(138, 213, 126);}
 .slightly {background: rgb(255, 254, 152);}
 .insoluble {background: rgb(215, 109, 109);}

@@ -191,7 +191,34 @@ sitemap: true
 
 <script>
         const jsonUrl = 'https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json';
-        
+        const translations = {
+            names: {
+                "H": "Водород", "He": "Гелий", "Li": "Литий", "Be": "Бериллий",
+                "Uuh": "Унунгексий"
+            },
+            categories: {
+                "diatomic nonmetal": "Двухатомный неметалл",
+                "polyatomic nonmetal": "Полиатомный неметалл",
+                "alkali metal": "Щелочной металл",
+                "alkaline earth metal": "Щелочноземельный металл",
+                "transition metal": "Переходный металл",
+                "post-transition metal": "Постпереходный металл",
+                "metalloid": "Металлоид",
+                "noble gas": "Благородный газ",
+                "lanthanide": "Лантаноид",
+                "actinide": "Актиноид",
+                "unknown": "Неизвестно"
+            },
+            propertyLabels: {
+                number: "Атомный номер",
+                atomic_mass: "Атомная масса",
+                category: "Категория",
+                period: "Период",
+                group: "Группа",
+                electron_configuration: "Электронная конфигурация"
+            }
+        };
+
         // Функция для сопоставления категорий из JSON с CSS классами цветов
         function getCategoryClass(category) {
             const cat = category.toLowerCase();
@@ -288,21 +315,36 @@ sitemap: true
         const closeModal = document.getElementById('closeModal');
 
         function showModal(element) {
-            modalTitle.innerText = `${element.name} (${element.symbol})`;
+            const russianName = translations.names[element.symbol] || element.name;
+            modalTitle.innerText = `${russianName} (${element.symbol})`;
             modalProperties.innerHTML = '';
 
-            // Перебираем все свойства объекта и формируем строки "[имя свойства]: [значение свойства]"
-            for (const [key, value] of Object.entries(element)) {
-                // Если значение — массив или вложенный объект, красиво форматируем его в строку
-                let displayValue = value;
-                if (typeof value === 'object' && value !== null) {
-                    displayValue = JSON.stringify(value);
-                } else if (value === null) {
-                    displayValue = 'нет данных';
+            const propertiesToRender = [
+                'number',
+                'atomic_mass',
+                'category',
+                'period',
+                'group',
+                'electron_configuration'
+            ];
+
+            propertiesToRender.forEach(key => {
+                let value = element[key];
+                if (value === null || value === undefined) value = 'нет данных';
+                // Перевод значения категории
+                if (key === 'category' && translations.categories[value.toLowerCase()]) {
+                    value = translations.categories[value.toLowerCase()];
+                }
+                
+                // Форматирование массы
+                if (key === 'atomic_mass' && typeof value === 'number') {
+                    value = value.toFixed(3);
                 }
 
-                modalProperties.innerText += `${key}: ${displayValue}\n`;
-            }
+                // Берём название свойства из твоего обновлённого объекта
+                const label = translations.propertyLabels[key] || key;
+                modalProperties.innerText += `${label}: ${value}\n`;
+            });
 
             modalOverlay.classList.add('active');
         }

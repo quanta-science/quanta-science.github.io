@@ -69,14 +69,14 @@ sitemap: true
     .elem-num {
         font-size: 0.75rem;
         font-weight: bold;
-        text-align: left;
+        text-align: right;
         opacity: 0.9;
     }
 
     .elem-symbol {
         font-size: 1.3rem;
         font-weight: bold;
-        text-align: right;
+        text-align: left;
         line-height: 1.1;
     }
 
@@ -341,8 +341,10 @@ sitemap: true
                     // Наполнение ячейки
                     // <div class="elem-name">${element.name}</div>
                     cell.innerHTML = `
-                        <div><span class="elem-num">${element.number}</span>
-                        <span class="elem-symbol">${element.symbol}</span></div>
+                        <div>
+                            <span class="elem-symbol">${element.symbol}</span>
+                            <span class="elem-num">${element.number}</span>
+                        </div>
                         <div class="elem-name">${translations.names[element.symbol] || element.name}</div>
                         <div class="elem-mass">${parseFloat(element.atomic_mass).toFixed(3)}</div>
                     `;

@@ -65,18 +65,19 @@ sitemap: true
         box-shadow: 0 0 0.625rem #555;
         z-index: 10;
     }
-
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
     .elem-num {
         font-size: 0.75rem;
         font-weight: bold;
-        text-align: right;
         opacity: 0.9;
     }
 
     .elem-symbol {
         font-size: 1.3rem;
         font-weight: bold;
-        text-align: left;
         line-height: 1.1;
     }
 
@@ -341,7 +342,7 @@ sitemap: true
                     // Наполнение ячейки
                     // <div class="elem-name">${element.name}</div>
                     cell.innerHTML = `
-                        <div>
+                        <div class="row">
                             <span class="elem-symbol">${element.symbol}</span>
                             <span class="elem-num">${element.number}</span>
                         </div>

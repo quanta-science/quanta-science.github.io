@@ -418,6 +418,11 @@ Cl^{\delta-}\)</p>
                         <div class="elem-name">${translations.names[element.symbol] || element.name}</div>
                         <div class="elem-mass">${parseFloat(element.electronegativity_pauling).toFixed(3)}</div>
                     `;
+
+                    // Вешаем событие клика для открытия модального окна
+                    cell.addEventListener('click', () => showModal(element));
+                    container.appendChild(cell);
+                    
                 });
 
             } catch (error) {

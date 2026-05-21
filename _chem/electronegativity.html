@@ -8,6 +8,7 @@ view: "topic"
 published: true
 sitemap: true
 ---
+
 <style>
     :root {
         --alkali-metal: #ff6666;
@@ -25,11 +26,14 @@ sitemap: true
     /* Сетка таблицы: 19 столбцов (1 для номеров периодов + 18 групп) */
     .periodic-table {
         display: grid;
-        grid-template-columns: 2.5rem repeat(18, minmax(4rem, 1fr));
+        grid-template-columns: 2rem repeat(18, minmax(5rem, 1fr));
         gap: 0.5rem;
         max-width: 87.5rem;
         margin: 0 auto;
+        padding: 0.5rem;
         overflow-x: auto;
+        grid-template-rows: 2rem;
+        grid-auto-rows: 4rem;
     }
 
     /* Шапки групп и периодов */
@@ -52,8 +56,8 @@ sitemap: true
         cursor: pointer;
         transition: transform 0.2s, box-shadow 0.2s;
         user-select: none;
-        aspect-ratio: 1 / 1;
-        min-height: 4rem;
+        /*aspect-ratio: 1 / 0.5;
+        min-height: 4rem;*/
     }
 
     .element-cell:hover {
@@ -62,7 +66,11 @@ sitemap: true
         box-shadow: 0 0 0.625rem #555;
         z-index: 10;
     }
-
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
     .elem-num {
         font-size: 0.75rem;
         font-weight: bold;
@@ -72,7 +80,6 @@ sitemap: true
     .elem-symbol {
         font-size: 1.3rem;
         font-weight: bold;
-        text-align: center;
         line-height: 1.1;
     }
 
@@ -102,59 +109,16 @@ sitemap: true
         .post-transition-metal { background-color: var(--post-transition-metal); color: #000; }
         .unknown { background-color: var(--unknown); color: #fff; }
 
-        /* Модальное окно */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background-color: white;
-            border: 2px solid #555;
+        .legend {
+            width: fit-content;
+            border: 3px solid #444;
             border-radius: 0.5rem;
-            width: 90%;
-            max-width: 31.25rem;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 1.25rem;
-            position: relative;
-            box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,0.5);
+            padding: 0.5rem;
         }
-
-        .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #555;
-            cursor: pointer;
-        }
-
-        .close-btn:hover { color: #ff6666; }
-
-        .modal-properties {
-            margin-top: 0.5rem;
-            font-family: monospace;
-            white-space: pre-wrap;
-            line-height: 1.1;
-            font-size: 0.7rem;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 </style>
 <p>Электроотрицательность – это свойство атома оттягивать общие электроны в ковалентной 
@@ -175,7 +139,19 @@ sitemap: true
 шкале Оллреда-Рохова гелий имеет самую высокую электроотрицательность.</p>
 
 <div class="periodic-table" id="periodicTable"></div>
-
+<h3>Легенда к цветовой раскраске таблицы</h3>
+<div class="container">
+    <div class="legend alkali-metal">щелочные металлы</div>
+    <div class="legend alkaline-earth-metal">щелочноземельные металлы</div>
+    <div class="legend transition-metal">переходные металлы</div>
+    <div class="legend metalloid">металлоиды</div>
+    <div class="legend diatomic-nonmetal">двух- и полиатомные неметаллы</div>
+    <div class="legend noble-gas">благородные газы</div>
+    <div class="legend lanthanide">лантаноиды</div>
+    <div class="legend actinide">актиноиды</div>
+    <div class="legend post-transition-metal">постпереходные металлы</div>
+    <div class="legend unknown">неизвестно</div>
+</div>
 <p>Разница в электроотрицательности между двумя связанными элементами определяет, какой 
 тип связи они будут образовывать. Когда разность электроотрицательностей атомов двух разных 
 элементов более двух единиц, между ними образуется ионная связь, в которой более 
@@ -299,10 +275,73 @@ Cl^{\delta-}\)</p>
 
 <script>
         const jsonUrl = 'https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json';
-        
+        const translations = {
+            names: {
+                "H": "Водород", "He": "Гелий", "Li": "Литий", "Be": "Бериллий", "B": "Бор",
+                "C": "Углерод", "N": "Азот", "O": "Кислород", "F": "Фтор", "Ne": "Неон",
+                "Na": "Натрий", "Mg": "Магний", "Al": "Алюминий", "Si": "Кремний", "P": "Фосфор",
+                "S": "Сера", "Cl": "Хлор", "Ar": "Аргон", "K": "Калий", "Ca": "Кальций",
+                "Sc": "Скандий", "Ti": "Титан", "V": "Ванадий", "Cr": "Хром", "Mn": "Марганец",
+                "Fe": "Железо", "Co": "Кобальт", "Ni": "Никель", "Cu": "Медь", "Zn": "Цинк",
+                "Ga": "Галлий", "Ge": "Германий", "As": "Мышьяк", "Se": "Селен", "Br": "Бром",
+                "Kr": "Криптон", "Rb": "Рубидий", "Sr": "Стронций", "Y": "Иттрий", "Zr": "Цирконий",
+                "Nb": "Ниобий", "Mo": "Молибден", "Tc": "Технеций", "Ru": "Рутений", "Rh": "Родий",
+                "Pd": "Палладий", "Ag": "Серебро", "Cd": "Кадмий", "In": "Индий", "Sn": "Олово",
+                "Sb": "Сурьма", "Te": "Теллур", "I": "Йод", "Xe": "Ксенон", "Cs": "Цезий",
+                "Ba": "Барий", "La": "Лантан", "Ce": "Церий", "Pr": "Празеодим", "Nd": "Неодим",
+                "Pm": "Прометий", "Sm": "Самарий", "Eu": "Европий", "Gd": "Гадолиний", "Tb": "Тербий",
+                "Dy": "Диспрозий", "Ho": "Гольмий", "Er": "Эрбий", "Tm": "Тулий", "Yb": "Иттербий",
+                "Lu": "Лютеций", "Hf": "Гафний", "Ta": "Тантал", "W": "Вольфрам", "Re": "Рений",
+                "Os": "Осмий", "Ir": "Иридий", "Pt": "Платина", "Au": "Золото", "Hg": "Ртуть",
+                "Tl": "Таллий", "Pb": "Свинец", "Bi": "Висмут", "Po": "Полоний", "At": "Астат",
+                "Rn": "Радон", "Fr": "Франций", "Ra": "Радий", "Ac": "Актиний", "Th": "Торий",
+                "Pa": "Протактиний", "U": "Уран", "Np": "Нептуний", "Pu": "Плутоний", "Am": "Америций",
+                "Cm": "Кюрий", "Bk": "Берклий", "Cf": "Калифорний", "Es": "Эйнштейний", "Fm": "Фермий",
+                "Md": "Менделевий", "No": "Нобелий", "Lr": "Лоуренсий", "Rf": "Резерфордий", "Db": "Дубний",
+                "Sg": "Сиборгий", "Bh": "Борий", "Hs": "Хассий", "Mt": "Мейтнерий", "Ds": "Дармштадтий",
+                "Rg": "Рентгений", "Cn": "Коперниций", "Nh": "Нихоний", "Fl": "Флеровий", "Mc": "Московий",
+                "Lv": "Ливерморий", "Ts": "Теннессин", "Og": "Оганесон"
+            },
+            categories: {
+                "diatomic nonmetal": "Двухатомный неметалл",
+                "polyatomic nonmetal": "Полиатомный неметалл",
+                "alkali metal": "Щелочной металл",
+                "alkaline earth metal": "Щелочноземельный металл",
+                "transition metal": "Переходный металл",
+                "post-transition metal": "Постпереходный металл",
+                "metalloid": "Металлоид",
+                "noble gas": "Благородный газ",
+                "lanthanide": "Лантаноид",
+                "actinide": "Актиноид",
+                "unknown": "Неизвестно"
+            },
+            propertyLabels: {
+                summary: "Краткая аннотация",
+                appearance: "Внешний вид",
+                category: "Категория",
+                phase: "Фазовое состояние",
+                boil: "Кипит при температуре, (кельвин)",
+                melt: "Плавится при температуре, (кельвин)",
+                density: "Плотность (для газов г/л, для твердых тел и жидкостей г/см³)",
+                molar_heat: "Молярная теплоемкость (Дж·моль⁻¹·К⁻¹)",
+                ionization_energies: "Энергия ионизации (кДж/моль)",
+                electron_affinity: "Сродство к электрону (кДж/моль)",
+                electron_configuration: "Электронная конфигурация",
+                electron_configuration_semantic: "Семантическая электронная конфигурация",
+                electronegativity_pauling: "Электротрицательность по Полингу",
+                group: "Группа",
+                period: "Период",
+                shells: "Количество электронных оболочек",
+                discovered_by: "Кем открыт",
+                named_by: "Кем назван",
+                source: "Ссылка на источник информации", 
+            }
+        };
+
         // Функция для сопоставления категорий из JSON с CSS классами цветов
         function getCategoryClass(category) {
             const cat = category.toLowerCase();
+            if (cat.includes('post-transition metal')) return 'post-transition-metal';
             if (cat.includes('alkali metal')) return 'alkali-metal';
             if (cat.includes('alkaline earth metal')) return 'alkaline-earth-metal';
             if (cat.includes('transition metal')) return 'transition-metal';
@@ -312,7 +351,6 @@ Cl^{\delta-}\)</p>
             if (cat.includes('polyatomic nonmetal')) return 'polyatomic-nonmetal';
             if (cat.includes('lanthanide')) return 'lanthanide';
             if (cat.includes('actinide')) return 'actinide';
-            if (cat.includes('post-transition metal')) return 'post-transition-metal';
             return 'unknown';
         }
 
@@ -371,15 +409,15 @@ Cl^{\delta-}\)</p>
                     cell.style.gridRow = element.ypos + 1;
 
                     // Наполнение ячейки
+                    // <div class="elem-name">${element.name}</div>
                     cell.innerHTML = `
-                        <div class="elem-num">${element.number}</div>
-                        <div class="elem-symbol">${element.symbol}</div>
+                        <div class="row">
+                            <span class="elem-symbol">${element.symbol}</span>
+                            <span class="elem-num">${element.number}</span>
+                        </div>
+                        <div class="elem-name">${translations.names[element.symbol] || element.name}</div>
                         <div class="elem-mass">${parseFloat(element.electronegativity_pauling).toFixed(3)}</div>
                     `;
-
-                    // Вешаем событие клика для открытия модального окна
-                    cell.addEventListener('click', () => showModal(element));
-                    container.appendChild(cell);
                 });
 
             } catch (error) {
@@ -387,7 +425,6 @@ Cl^{\delta-}\)</p>
                 document.getElementById('periodicTable').innerText = 'Не удалось загрузить данные таблицы.';
             }
         }
-
         // Инициализация при загрузке страницы
         window.addEventListener('DOMContentLoaded', initTable);
 </script>

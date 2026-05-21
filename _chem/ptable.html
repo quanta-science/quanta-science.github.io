@@ -69,6 +69,7 @@ sitemap: true
     .elem-num {
         font-size: 0.75rem;
         font-weight: bold;
+        text-align: left;
         opacity: 0.9;
     }
 
@@ -340,8 +341,8 @@ sitemap: true
                     // Наполнение ячейки
                     // <div class="elem-name">${element.name}</div>
                     cell.innerHTML = `
-                        <div class="elem-num">${element.number}</div>
-                        <div class="elem-symbol">${element.symbol}</div>
+                        <div><span class="elem-num">${element.number}</span>
+                        <span class="elem-symbol">${element.symbol}</span></div>
                         <div class="elem-name">${translations.names[element.symbol] || element.name}</div>
                         <div class="elem-mass">${parseFloat(element.atomic_mass).toFixed(3)}</div>
                     `;

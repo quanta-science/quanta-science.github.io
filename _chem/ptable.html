@@ -193,6 +193,7 @@ sitemap: true
         // Функция для сопоставления категорий из JSON с CSS классами цветов
         function getCategoryClass(category) {
             const cat = category.toLowerCase();
+            if (cat.includes('post-transition metal')) return 'post-transition-metal';
             if (cat.includes('alkali metal')) return 'alkali-metal';
             if (cat.includes('alkaline earth metal')) return 'alkaline-earth-metal';
             if (cat.includes('transition metal')) return 'transition-metal';
@@ -202,7 +203,6 @@ sitemap: true
             if (cat.includes('polyatomic nonmetal')) return 'polyatomic-nonmetal';
             if (cat.includes('lanthanide')) return 'lanthanide';
             if (cat.includes('actinide')) return 'actinide';
-            if (cat.includes('post-transition metal')) return 'post-transition-metal';
             return 'unknown';
         }
 

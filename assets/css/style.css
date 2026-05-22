@@ -162,7 +162,7 @@ lite-youtube {
     gap: 0.5rem;
 }
 
-kbd {
+.logo kbd {
     --kbd-bg: #1a86bf;
     --kbd-border: #0d5f8d;
     --kbd-shadow: #084766;
@@ -202,7 +202,7 @@ kbd {
         box-shadow 0.06s ease;
 }
 
-kbd:active {
+.logo kbd:active {
     transform: translateY(1px);
 
     box-shadow:

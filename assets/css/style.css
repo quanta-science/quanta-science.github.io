@@ -162,6 +162,54 @@ lite-youtube {
     gap: 0.5rem;
 }
 
+kbd {
+    --kbd-bg: #1a86bf;
+    --kbd-border: #0d5f8d;
+    --kbd-shadow: #084766;
+    --kbd-text: #ffffff;
+
+    display: inline-block;
+    padding: 0.18em 0.55em;
+    margin: 0 0.08em;
+
+    font-family: Consolas, Monaco, monospace;
+    font-size: 0.92em;
+    font-weight: 600;
+    line-height: 1.4;
+
+    color: var(--kbd-text);
+    background: linear-gradient(
+        to bottom,
+        #2694cf 0%,
+        var(--kbd-bg) 100%
+    );
+
+    border: 1px solid var(--kbd-border);
+    border-radius: 6px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 2px 0 var(--kbd-shadow),
+        0 3px 6px rgba(0,0,0,0.18);
+
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+
+    vertical-align: middle;
+    white-space: nowrap;
+
+    transition:
+        transform 0.06s ease,
+        box-shadow 0.06s ease;
+}
+
+kbd:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        inset 0 1px 2px rgba(0,0,0,0.18),
+        0 1px 0 var(--kbd-shadow);
+}
+
 .soluble {background: rgb(138, 213, 126);}
 .slightly {background: rgb(255, 254, 152);}
 .insoluble {background: rgb(215, 109, 109);}

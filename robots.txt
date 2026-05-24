@@ -1,1 +1,1 @@
-Sitemap: https://quanta-science.github.io/sitemap.xml
+Sitemap: https://quanta-science.github.io/sitemap_v2.xml

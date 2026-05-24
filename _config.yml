@@ -36,6 +36,5 @@ collections:
     nav: true
 
 plugins:
-  - jekyll-sitemap
   - jekyll-last-modified-at
   - jekyll-remote-theme

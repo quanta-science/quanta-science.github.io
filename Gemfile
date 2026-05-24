@@ -5,7 +5,6 @@ gem "jekyll"
 
 # Ваши плагины
 group :jekyll_plugins do
-  gem "jekyll-sitemap"
   gem "jekyll-last-modified-at"
   gem "jekyll-remote-theme"
 end

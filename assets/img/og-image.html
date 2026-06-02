@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUANTA SCIENCE OG-Image</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(150deg, #060eee, #FF0000 100%);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: white;
+      padding: 60px;
+      box-sizing: border-box;
+    }
+    .atom-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.1;
+      width: 80%;
+    }
+    .atom-bg .nucleus {
+      fill: #FFD700;
+      stroke: none;
+    }
+    .title {
+      font-size: 60px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #FF7000;
+      text-transform: uppercase;
+      text-shadow:
+        -2px -2px 0 white,
+         2px -2px 0 white,
+        -2px  2px 0 white,
+         2px  2px 0 white;
+    }
+    .subtitle {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+    .triggers {
+      font-size: 50px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: white;
+    }
+    .thesis {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      color: white;
+    }
+    .cta {
+      font-size: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #FF7000;
+      text-shadow:
+        -2px -2px 0 white,
+         2px -2px 0 white,
+        -2px  2px 0 white,
+         2px  2px 0 white;
+    }
+  </style>
+</head>
+<body>
+  <div class="og-image">
+    <!-- Фоновые элементы -->
+    <svg class="atom-bg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ядро атома -->
+        <circle cx="100" cy="100" r="10" fill="#FF0000"/>
+        <!-- Наклонные эллипсы-орбиты -->
+        <path fill="none" stroke="white" stroke-width="3" d="M100,50a50,25 0 1,0 0,100a50,25 0 1,0 0,-100z" transform="rotate(30 100 100)"/>
+        <path fill="none" stroke="white" stroke-width="2" d="M100,30a70,35 0 1,0 0,140a70,35 0 1,0 0,-140z" transform="rotate(30 100 100)"/>
+        <path fill="none" stroke="white" stroke-width="1" d="M100,10a90,45 0 1,0 0,180a90,45 0 1,0 0,-180z" transform="rotate(30 100 100)"/>
+        <rect x="35" y="35" width="130" height="130" fill="none" stroke=none stroke-width="1"/>
+    </svg>
+
+    <!-- Контент -->
+    <div class="title">QUANTA SCIENCE</div>
+    <div class="thesis">ИНДИВИДУАЛЬНЫЕ<br>ОНЛАЙН ТРЕНИНГИ</div>
+    <div class="triggers">МАТЕМАТИКА<br>ФИЗИКА<br>ХИМИЯ</div>
+  </div>
+</body>
+</html>

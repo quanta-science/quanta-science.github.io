@@ -17,3 +17,9 @@
 - [https://quanta-science.github.io/phys/] — Навигатор справочника по школьной физике: шпаргалки, формулы, таблицы констант и наглядные схемы
 - [https://quanta-science.github.io/chem/] — Навигатор справочника по школьной химии: реакции, таблицы, классификации
 - [https://quanta-science.github.io/misc/] — Статьи и рекомендации для учеников и родителей
+
+## Контактная информация / Contact Information
+- **Email:** quanta.science@gmail.com
+- **Телефон:** +7 (707) 101-19-37
+- **Telegram:** https://t.me/Quanta_Science
+- **WhatsApp:** [+7 (707) 101-19-37](https://wa.me/77071011937) (Только текстовые сообщения)

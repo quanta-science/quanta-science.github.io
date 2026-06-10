@@ -9,7 +9,8 @@ view: "nav"
 published: true
 sitemap: true
 ---
-
+<p>Пришли из видео? Нажмите на тему, которую только что смотрели и прокрутите 
+страницу до раздела разбора решений, чтобы открыть разбор вашей задачи.</p>
 {% assign nav_collections = site.collections | where: "nav", true | sort: "nav_order" %}
 {% for col in nav_collections %}
     {% assign dict_name = col.label %}

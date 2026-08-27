@@ -9,7 +9,7 @@
                 </header>
                     {{ content }}
                     <hr>
-                    {% include quiz.html %}
+                    {% include examples.html %}
                 <footer>
                     {% if page.collection %}
                         {% assign current_collection = site.collections | where: "label", page.collection | first %}

@@ -1,6 +1,6 @@
 {% if page.quizzes %}
 <section class="quiz-container" id="quiz-section">
-    <h2>Вопросы для самопроверки. {{ page.quizzes.name }}</h2>
+    <h2>Вопросы для самопроверки. {{ page.quizzes.name }}</h2> 
     {% for quiz in page.quizzes.items %}
         <div class="quiz-item" data-quiz-index="{{ forloop.index }}">
             <div class="quiz-question">

@@ -4,7 +4,13 @@
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']],
             displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true
+            processEscapes: true,
+            // Добавляем mhchem в список загружаемых пакетов:
+            packages: {'[+]': ['mhchem']}
+        },
+        // Подключаем расширение mhchem
+        loader: {
+            load: ['[tex]/mhchem']
         },
         chtml: {
             scale: 1

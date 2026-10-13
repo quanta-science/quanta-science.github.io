@@ -25,11 +25,12 @@ function send_request() {
 
 function check_params_acceptance() {
 	const elem_acceptance_butt = document.getElementById('acceptance_butt');
-    const checkedSubjects = document.querySelectorAll('.subject:checked');
-
-	if (checkedSubjects.length === 0) {
-		elem_second_butt.disabled = true;
-	} else {
+    const inputs = document.querySelectorAll('input[type="text"]');
+    const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+    if (!allFilled) {
+        alert('Пожалуйста, заполните все обязательные поля!');
+        elem_second_butt.disabled = true;
+    } else {
 		elem_second_butt.disabled = false;
 	}
 }

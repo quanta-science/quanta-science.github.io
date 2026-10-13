@@ -22,16 +22,16 @@ sitemap: false
 <form id="offer_form">
     <!-- Данные клиента -->
     <label for="customer_name">Имя заказчика
-        <input type="text" name="customer_name" placeholder="Ваше имя" required>
+        <input type="text" id="customer_name" placeholder="Ваше имя" required>
     </label>
     <label for="customer_last_name">Фамилия заказчика
-        <input type="text" name="customer_last_name" placeholder="Ваша фамилия" required>
+        <input type="text" id="customer_last_name" placeholder="Ваша фамилия" required>
     </label>
     <label for="student_name">Имя ученика
-        <input type="text" name="student_name" placeholder="Имя ученика" required>
+        <input type="text" id="student_name" placeholder="Имя ученика" required>
     </label>
     <label for="student_last_name">Фамилия ученика
-        <input type="text" name="student_last_name" placeholder="Фамилия ученика" required>
+        <input type="text" id="student_last_name" placeholder="Фамилия ученика" required>
     </label>
         <small>
                 Всё поля обязательны для заполнения. Отправка формы возможна 
@@ -42,7 +42,7 @@ sitemap: false
                     0,-2.55 3.3,-0.65 -3.3,-0.65 z"/>
                 </svg>.
         </small>
-        <button id="second_butt" onclick="send_request()" disabled>
+        <button id="second_butt" onclick="send_acceptance()" disabled>
                 Отправить акцепт оферты в Whatsapp
         </button>
         <br>
@@ -50,8 +50,4 @@ sitemap: false
             Мы свяжемся с вами, чтобы согласовать и подтвердить Заказ. 
             Для быстрой связи можете <a href="#contacts">позвонить или написать нам</a>.
         </small>
-
-    «Я, [ФИО Заказчика], ознакомлен и полностью согласен с условиями оферты ИП "Quanta Science" 
-    в действующей редакции, размещенной на веб-странице Исполнителя. Подтверждаю, что мои платежи 
-    по реквизитам ИП "Quanta Science" осуществляются на условиях данной Оферты для Ученика [ФИО Ученика]».
-    </form>
+</form>

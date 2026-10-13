@@ -23,6 +23,15 @@ function send_request() {
     + document.getElementById('comments').value + "%0A" + "Нажмите отправить >>>");
 }
 
+function send_acceptance() {
+    window.open("https://wa.me/77071011937?text=" + "Я," + "%0A" 
+    + document.getElementById('customer_name').value + "%0A") 
+    + document.getElementById('customer_last_name').value + ",%0A") 
+    + "ознакомлен и полностью согласен с условиями оферты ИП Quanta Science в действующей редакции, размещенной на веб-странице Исполнителя. Подтверждаю, что мои платежи по реквизитам ИП Quanta Science осуществляются на условиях данной Оферты для Ученика " 
+    + document.getElementById('student_name').value + "%0A") 
+    + document.getElementById('student_last_name').value + "%0A" + "Нажмите отправить >>>");
+}    
+
 document.addEventListener('DOMContentLoaded', function() {
     const calcBtn = document.getElementById('calc-btn');
     const retryBtn = document.getElementById('retry-btn');

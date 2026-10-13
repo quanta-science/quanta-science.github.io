@@ -22,16 +22,16 @@ sitemap: false
 <form id="offer_form">
     <!-- Данные клиента -->
     <label for="customer_name">Имя заказчика
-        <input type="text" id="customer_name" placeholder="Ваше имя" required>
+        <input type="text" id="customer_name" placeholder="Ваше имя" onchange="check_params_acceptance()" required>
     </label>
     <label for="customer_last_name">Фамилия заказчика
-        <input type="text" id="customer_last_name" placeholder="Ваша фамилия" required>
+        <input type="text" id="customer_last_name" placeholder="Ваша фамилия" onchange="check_params_acceptance()" required>
     </label>
     <label for="student_name">Имя ученика
-        <input type="text" id="student_name" placeholder="Имя ученика" required>
+        <input type="text" id="student_name" placeholder="Имя ученика" onchange="check_params_acceptance()" required>
     </label>
     <label for="student_last_name">Фамилия ученика
-        <input type="text" id="student_last_name" placeholder="Фамилия ученика" required>
+        <input type="text" id="student_last_name" placeholder="Фамилия ученика" onchange="check_params_acceptance()" required>
     </label>
     <p>
         <small>

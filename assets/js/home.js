@@ -24,7 +24,7 @@ function send_request() {
 }
 
 function check_params_acceptance() {
-	const elem_acceptance_butt = document.getElementById('acceptance_butt');
+	const elem_acceptance = document.getElementById('acceptance_butt');
     const inputs = document.querySelectorAll('input[type="text"]');
     const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
     if (!allFilled) {

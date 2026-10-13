@@ -23,6 +23,17 @@ function send_request() {
     + document.getElementById('comments').value + "%0A" + "Нажмите отправить >>>");
 }
 
+function check_params_acceptance() {
+	const elem_acceptance_butt = document.getElementById('acceptance_butt');
+    const checkedSubjects = document.querySelectorAll('.subject:checked');
+
+	if (checkedSubjects.length === 0) {
+		elem_second_butt.disabled = true;
+	} else {
+		elem_second_butt.disabled = false;
+	}
+}
+
 function send_acceptance() {
     window.open("https://wa.me/77071011937?text=" + "Я," + "%0A" 
     + document.getElementById('customer_name').value + "%0A") 

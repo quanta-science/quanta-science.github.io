@@ -28,7 +28,6 @@ function check_params_acceptance() {
     const inputs = document.querySelectorAll('input[type="text"]');
     const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
     if (!allFilled) {
-        alert('Пожалуйста, заполните все обязательные поля!');
         elem_acceptance.disabled = true;
     } else {
 		elem_acceptance.disabled = false;

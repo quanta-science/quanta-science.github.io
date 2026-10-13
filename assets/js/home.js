@@ -24,13 +24,12 @@ function send_request() {
 }
 
 function check_params_acceptance() {
-	const elem_acceptance = document.getElementById('acceptance_butt');
     const inputs = document.querySelectorAll('#customer_name, #customer_last_name, #student_name, #student_last_name');
     const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
     if (!allFilled) {
-        elem_acceptance.disabled = true;
+        document.getElementById('accept').disabled = true;
     } else {
-		elem_acceptance.disabled = false;
+		document.getElementById('accept').disabled = false;
 	}
 }
 

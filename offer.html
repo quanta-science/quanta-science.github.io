@@ -148,53 +148,51 @@ sitemap: true
     <h2 class="num_1">Реквизиты исполнителя</h2>
         <p class="num_2"> Размещение реквизитов не обязывает Исполнителя принять оплату в счёт услуг, если Заказ не зафиксирован.</p>
         <p class="num_2">
-            ИП "Quanta Science"<br>
-            ИИН: 790526301744<br><br>
+            ИП "Quanta Science", ИИН: 790526301744<br><br>
 
             АО "Банк ЦентрКредит"<br>
             БИК: KCJBKZKX<br>
             ИИК: KZ158 56220 41068 74368<br>
             КБе: 19<br><br>
 
-            Адрес:<br>
-            Республика Казахстан,<br>
-            город Актобе,<br>
+            Адрес: Республика Казахстан, город Актобе,<br>
             улица Мустафы Шокай, дом 16
         </p>
+        <p class="num_2">Заполните следующую форму для отправки акцепта.
+            <form id="offer_form">
+                <!-- Данные клиента -->
+                <label for="customer_name">Имя заказчика
+                    <input type="text" id="customer_name" placeholder="Ваше имя" onchange="check_params_acceptance()" required>
+                </label>
+                <label for="customer_last_name">Фамилия заказчика
+                    <input type="text" id="customer_last_name" placeholder="Ваша фамилия" onchange="check_params_acceptance()" required>
+                </label>
+                <label for="student_name">Имя ученика
+                    <input type="text" id="student_name" placeholder="Имя ученика" onchange="check_params_acceptance()" required>
+                </label>
+                <label for="student_last_name">Фамилия ученика
+                    <input type="text" id="student_last_name" placeholder="Фамилия ученика" onchange="check_params_acceptance()" required>
+                </label>
+                <p>
+                    <small>
+                        Всё поля обязательны для заполнения. Отправка формы возможна 
+                        только через WhatsApp. После перехода в WhatsApp не забудьте нажать на кнопку
+                        <svg width="21" height="21" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="wa-button-circle" cx="9" cy="9" r="8.6" />
+                            <path class="wa-button-path" d="m 6.35,5.66 6.5,3.2 -6.5,3.2 
+                            0,-2.55 3.3,-0.65 -3.3,-0.65 z"/>
+                        </svg>.
+                    </small>
+                </p>
+                <button id="accept" onclick="send_acceptance()" disabled>
+                    Отправить акцепт оферты в Whatsapp
+                </button>
+                <p>
+                    <small>
+                        Мы свяжемся с вами, чтобы согласовать и подтвердить Заказ. 
+                        Для быстрой связи можете <a href="#contacts">позвонить или написать нам</a>.
+                    </small>
+                </p>
+            </form>
+        </p>
 </div>
-
-<form id="offer_form">
-    <!-- Данные клиента -->
-    <label for="customer_name">Имя заказчика
-        <input type="text" id="customer_name" placeholder="Ваше имя" onchange="check_params_acceptance()" required>
-    </label>
-    <label for="customer_last_name">Фамилия заказчика
-        <input type="text" id="customer_last_name" placeholder="Ваша фамилия" onchange="check_params_acceptance()" required>
-    </label>
-    <label for="student_name">Имя ученика
-        <input type="text" id="student_name" placeholder="Имя ученика" onchange="check_params_acceptance()" required>
-    </label>
-    <label for="student_last_name">Фамилия ученика
-        <input type="text" id="student_last_name" placeholder="Фамилия ученика" onchange="check_params_acceptance()" required>
-    </label>
-    <p>
-        <small>
-            Всё поля обязательны для заполнения. Отправка формы возможна 
-            только через WhatsApp. После перехода в WhatsApp не забудьте нажать на кнопку
-            <svg width="21" height="21" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                <circle class="wa-button-circle" cx="9" cy="9" r="8.6" />
-                <path class="wa-button-path" d="m 6.35,5.66 6.5,3.2 -6.5,3.2 
-                0,-2.55 3.3,-0.65 -3.3,-0.65 z"/>
-            </svg>.
-        </small>
-    </p>
-    <button id="accept" onclick="send_acceptance()" disabled>
-        Отправить акцепт оферты в Whatsapp
-    </button>
-    <p>
-        <small>
-            Мы свяжемся с вами, чтобы согласовать и подтвердить Заказ. 
-            Для быстрой связи можете <a href="#contacts">позвонить или написать нам</a>.
-        </small>
-    </p>
-</form>

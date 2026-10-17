@@ -10,27 +10,27 @@ sitemap: true
 ---
 
 <style>
-    .num_0 {
+    .num_0{
         counter-reset: num_1_counter;
     }
-    .num_1 h2{
+    .num_1{
         counter-increment: num_1_counter;
         counter-reset: num_2_counter;
     }
-    .num_1 h2::before {
+    .num_1::before {
         content: counter(num_1_counter) ". ";
     }
-    .num_2 h3{
+    .num_2{
         counter-increment: num_2_counter;
         counter-reset: num_3_counter;
     }
-    .num_2 h3::before {
+    .num_2::before {
         content: counter(num_1_counter) "." counter(num_2_counter) ". ";
     }
-    .num_3 h4{
+    .num_3{
         counter-increment: num_3_counter;
     }
-    .num_3 h4::before {
+    .num_3::before {
         content: counter(num_1_counter) "." counter(num_2_counter) "." counter(num_3_counter) ". ";
     }
 </style>

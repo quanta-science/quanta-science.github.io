@@ -10,7 +10,29 @@ sitemap: true
 ---
 
 <style>
-
+    .num_0 {
+        counter-reset: num_1_counter;
+    }
+    .num_1 h2{
+        counter-increment: num_1_counter;
+        counter-reset: num_2_counter;
+    }
+    .num_1 h2::before {
+        content: counter(num_1_counter) ". ";
+    }
+    .num_2 h3{
+        counter-increment: num_2_counter;
+        counter-reset: num_3_counter;
+    }
+    .num_2 h3::before {
+        content: counter(num_1_counter) "." counter(num_2_counter) ". ";
+    }
+    .num_3 h4{
+        counter-increment: num_3_counter;
+    }
+    .num_3 h4::before {
+        content: counter(num_1_counter) "." counter(num_2_counter) "." counter(num_3_counter) ". ";
+    }
 </style>
 
 <p>Индивидуальный предприниматель «Quanta Science», действующий на основании Уведомления о 
